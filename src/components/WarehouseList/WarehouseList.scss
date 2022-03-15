@@ -1,0 +1,12 @@
+@use "../../style/partial/color-var" as *;
+@use "../../style/partial/mixin" as *;
+
+body {
+  background-color: $color-black;
+}
+
+.WarehouseList {
+  background-color: $color-white;
+  margin: 1rem;
+  border-radius: 4px;
+}
