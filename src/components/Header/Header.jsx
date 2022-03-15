@@ -1,13 +1,12 @@
 import './Header.scss';
-import Logo1x from '../../assets/logo/InStock-Logo_1x.png';
-import Logo2x from '../../assets/logo/InStock-Logo_2x.png';
+import Logo from '../../assets/logo/InStock-Logo.svg';
 
 
 export default function Header() {
     return(
         <div className='header__container'>
             <div className='header__logo'>
-                <img className='header__img' src={Logo1x} alt='Logo'/>
+                <img className='header__img' src={Logo} alt='Logo'/>
             </div>
             <div className='subheader'>
                 <div className='subheader__warehouse'>
