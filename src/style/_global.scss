@@ -129,6 +129,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  box-sizing: content-box;
+}
 
 h1 {
   font-size: 1.75rem;
