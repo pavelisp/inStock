@@ -22,7 +22,22 @@ class WarehouseList extends Component {
           <ul className="WarehouseList__list">
             <li className="WarehouseList__list-item">
               <div className="WarehouseList__list-item-info">
-                <div></div>
+                <div className="WarehouseList__list-item-warehouse WarehouseList__list-item-box">
+                  <h4 className="WarehouseList__list-item-header">Warehouse</h4>
+                  <p className="WarehouseList__list-item-text">King West > </p>
+                </div>
+                <div className="WarehouseList__list-item-address WarehouseList__list-item-box">
+                  <h4 className="WarehouseList__list-item-header">Address</h4>
+                  <p className="WarehouseList__list-item-text WarehouseList__list-item-address-text"><span>469 King Street West,</span><span>Toronto,</span> <span>CAN</span></p>
+                </div>
+                <div className="WarehouseList__list-item-contact WarehouseList__list-item-box">
+                  <h4 className="WarehouseList__list-item-header">Contact name</h4>
+                  <p className="WarehouseList__list-item-text">Graeme Lyon</p>
+                </div>
+                <div className="WarehouseList__list-item-contact-info WarehouseList__list-item-box">
+                  <h4 className="WarehouseList__list-item-header">Contact information</h4>
+                  <p className="WarehouseList__list-item-text WarehouseList__list-item-contact-info-text"><span>+1 (647) 504-0911 </span><span>glyon@instock.com</span></p>
+                </div>
               </div>
               <div className="WarehouseList__list-item-actions">
                 <span className="WarehouseList__list-item-delete" />

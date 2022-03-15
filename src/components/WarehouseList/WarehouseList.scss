@@ -9,4 +9,61 @@ body {
   background-color: $color-white;
   margin: 1rem;
   border-radius: 4px;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+  &__title {
+    @include tablet {
+      margin-right: auto;
+    }
+  }
+  &__list-header {
+    display: none;
+    @include tablet {
+      display: flex;
+    }
+  }
+  &__list {
+  }
+  &__list-item-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 12.5rem;
+  }
+  &__list-item-box {
+    height: 50%;
+  }
+  &__list-item-address-text {
+    display: flex;
+    flex-direction: column;
+  }
+  &__list-item-contact-info-text {
+    display: flex;
+    flex-direction: column;
+  }
+  &__list-item-actions {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+  &__list-item-delete,
+  &__list-item-edit {
+    display: block;
+    background-color: red;
+    width: 10px;
+    height: 10px;
+  }
+  &__list-item-header {
+    display: block;
+    @include tablet {
+      display: none;
+    }
+  }
 }
