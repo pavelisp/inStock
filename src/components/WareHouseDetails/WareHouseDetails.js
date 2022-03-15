@@ -1,7 +1,7 @@
 import "./WareHouseDetails.scss";
 
 function WareHouseDetails() {
-  return <div>WareHouseDetails</div>;
+  return <div></div>;
 }
 
 export default WareHouseDetails;
