@@ -15,6 +15,13 @@
         align-items: center;
         padding: 32px;
     }
+    @media (min-width: 1280px) {
+        display: flex;
+        padding-left: 130px;
+        padding-right: 130px;
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
 }
 
 .header__logo{
