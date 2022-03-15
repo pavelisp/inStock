@@ -1,4 +1,5 @@
-
+import WareHouseDetails from "./components/WareHouseDetails/WareHouseDetails";
+import "./App.scss";
 import { Component } from "react";
 import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";
 import "./App.scss";
@@ -16,7 +17,6 @@ class App extends Component {
       </BrowserRouter>
     );
   }
-  
 }
 
 export default App;
