@@ -1,0 +1,18 @@
+.add-warehouse{
+    &__form{
+        width:21.4375rem;
+        height: 57.625rem;
+        border-radius: 3px;
+    }
+    &__container{
+        margin: 0 1rem;
+        display:flex;
+        flex-direction:column;
+    }
+    &__line{
+        margin-bottom: .625rem;
+        display: flex;
+        flex-direction: column;
+        
+    }
+}
