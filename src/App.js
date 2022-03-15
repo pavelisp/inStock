@@ -1,25 +1,22 @@
-import logo from "./logo.svg";
+import WareHouseDetails from "./components/WareHouseDetails/WareHouseDetails";
+import "./App.scss";
+import { Component } from "react";
+import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";
 import "./App.scss";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render(){
+    return (
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact to="" />
+          <Route path="/warehouse" component={""} />
+          <Route path="/inventory" component={""} />
+          {/* Routes are flexible right now, add or change as needed */}
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
