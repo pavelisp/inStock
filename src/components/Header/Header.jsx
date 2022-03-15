@@ -2,6 +2,7 @@ import './Header.scss';
 import Logo from '../../assets/logo/InStock-Logo.svg';
 
 
+
 export default function Header() {
     return(
         <div className='header__container'>

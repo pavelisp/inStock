@@ -1,12 +1,15 @@
 import './InventoryList.scss';
 import SearchImg from '../../assets/icons/search-24px.svg';
 import React from 'react';
+import InventoryCard from '../InventoryCard/InventoryCard';
+
 
 export default class InventoryList extends React.Component  {
 
 
     render() {
         return(
+            <>
             <div className='inventorylist'>
                 <header className='inventorylist__header'>
                     <h2 className='inventorylist__title'>Inventory</h2>
@@ -16,8 +19,13 @@ export default class InventoryList extends React.Component  {
                     </form>
                     <p className='inventorylist__search-add'>+Add New Item</p>
                 </header>
+                
 
             </div>
+            <div>
+                <InventoryCard/>
+            </div>
+            </>
         )
     }
 }
