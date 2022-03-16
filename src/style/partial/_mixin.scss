@@ -9,3 +9,9 @@
     @content;
   }
 }
+
+@mixin round-element {
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  min-width: 122px;
+}
