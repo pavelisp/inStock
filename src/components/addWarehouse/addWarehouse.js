@@ -44,6 +44,10 @@ class warehouse extends react.Component {
                         <label className="add-warehouse__form--email-label"> Email</label>
                         <input className="add-warehouse__form--email-input" name="email" type="text" placeholder="Email"></input>
                         </div>
+                        <div>
+                            <button className="add-warehouse__sumbit-button" type="submit">Add Warehouse</button>
+                            <button className="add-warehouse__cancel-button" type="reset">Cancel</button> 
+                        </div>
                 </form>
             </div>
         </main>
