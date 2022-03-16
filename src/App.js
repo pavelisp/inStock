@@ -9,6 +9,7 @@ class App extends Component {
   render(){
     return (
       <BrowserRouter>
+      <Header/>
         <Switch>
           <Route path="/" exact to="" />
           <Route path="/warehouse" component={""} />
