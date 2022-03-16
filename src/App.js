@@ -1,20 +1,25 @@
 import Header from './components/Header/Header';
-import InventoryList from './components/InventoryList/InventoryList';
-import WareHouseDetails from "./components/WareHouseDetails/WareHouseDetails";
 import "./App.scss";
 import { Component } from "react";
 import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";
-import WarehouseList from './components/WarehouseList/WarehouseList';
+import Warehouses from './pages/Warehouses/Warehouses';
+import Inventory from './pages/Inventory/Inventory';
+
 
 class App extends Component {
+  state = {
+    warehouses: null,
+    inventory: null
+  }
+
   render(){
     return (
       <BrowserRouter>
       <Header/>
         <Switch>
           <Route path="/" exact to="" />
-          <Route path="/warehouse" component={WarehouseList} />
-          <Route path="/inventory" component={InventoryList} />
+          <Route path="/warehouse" render={()=><Warehouses />} />
+          <Route path="/inventory" render={()=><Inventory />} />
           {/* Routes are flexible right now, add or change as needed */}
         </Switch>
       </BrowserRouter>
