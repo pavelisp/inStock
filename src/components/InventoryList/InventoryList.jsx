@@ -2,12 +2,14 @@ import './InventoryList.scss';
 import SearchImg from '../../assets/icons/search-24px.svg';
 import React from 'react';
 import InventoryCard from '../InventoryCard/InventoryCard';
+import SortIcon from '../../assets/icons/sort-24px.svg';
 
 
 export default class InventoryList extends React.Component  {
 
 
     render() {
+        console.log(this.props.inventory)
         return(
             <>
             <div className='inventorylist'>
@@ -22,9 +24,31 @@ export default class InventoryList extends React.Component  {
                 
 
             </div>
-            <div>
-                <InventoryCard/>
-            </div>
+            <div className='inventoryCardtableandDesktop__Header'>
+                   <h4 className='inventoryCardtableandDesktop__title'>INVENTORY ITEM<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__title'>CATEGORY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__title'>STATUS<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__title'>QTY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__title'>WAREHOUSE<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__title'>ACTIONS</h4>
+                </div>
+            <ul>
+               {this.props.inventory.map(inventorycard =>{
+                   return(
+                    <InventoryCard
+                    itemName={inventorycard.itemName}
+                    category={inventorycard.category}
+                    status={inventorycard.status}
+                    quantity={inventorycard.quantity}
+                    warehouseName={inventorycard.warehouseName}
+                    
+
+                    />
+
+
+                   )
+               })}
+            </ul>
             </>
         )
     }
