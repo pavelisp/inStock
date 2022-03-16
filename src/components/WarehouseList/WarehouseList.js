@@ -24,7 +24,7 @@ class WarehouseList extends Component {
               <div className="WarehouseList__list-item-info">
                 <div className="WarehouseList__list-item-warehouse WarehouseList__list-item-box">
                   <h4 className="WarehouseList__list-item-header">Warehouse</h4>
-                  <p className="WarehouseList__list-item-text">King West > </p>
+                  <p className="WarehouseList__list-item-text">King West  </p>
                 </div>
                 <div className="WarehouseList__list-item-address WarehouseList__list-item-box">
                   <h4 className="WarehouseList__list-item-header">Address</h4>
