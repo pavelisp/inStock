@@ -4,12 +4,25 @@ import { Component } from "react";
 import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";
 import Warehouses from './pages/Warehouses/Warehouses';
 import Inventory from './pages/Inventory/Inventory';
+import axios from 'axios';
 
 
 class App extends Component {
   state = {
     warehouses: null,
     inventory: null
+  }
+
+  componentDidMount() {
+    axios
+      .get('http://localhost:8080/inventory')
+      .then(response => {
+        this.setState({
+          inventory: response.data
+        })
+
+      })
+      .catch(err =>console.log(err))
   }
 
   render(){
@@ -19,7 +32,7 @@ class App extends Component {
         <Switch>
           <Route path="/" exact to="" />
           <Route path="/warehouse" render={()=><Warehouses />} />
-          <Route path="/inventory" render={()=><Inventory />} />
+          <Route path="/inventory" render={()=> this.state.inventory && <Inventory inventory={this.state.inventory} />} />
           {/* Routes are flexible right now, add or change as needed */}
         </Switch>
       </BrowserRouter>
