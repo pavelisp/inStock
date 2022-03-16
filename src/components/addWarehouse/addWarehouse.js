@@ -1,15 +1,35 @@
 import react from "react"
 import "./addWarehouse.scss"
+import axios from "axios"
 
 
 class warehouse extends react.Component {
 
+    
+
     render(){
+        const axiosURL = ""
+        const handleSubmit = (e) => {
+            e.preventDefault(e);
+            axios.post(`${axiosURL}/warehouses`,{
+                name: e.target.name.value,
+                address: e.target.address.value,
+                city: e.target.city.value,
+                country: e.target.country.value,
+                contact: e.target.contact.value,
+                position: e.target.position.value,
+                phone: e.target.phone.value,
+                email: e.target.email.value,
+            })
+            .catch(err => alert("All Lines of Form Must be filled."))
+
+        };
+
     return(
         <main className="add-warehouse">
-            <h1 className="add-warehouse__header">Add New Wearhouse</h1>
+            <h1 className="add-warehouse__header">Add New Warehouse</h1>
             <div className="add-warehouse__container">
-                <form className="add-warehouse__form">
+                <form onSubmit={handleSubmit} className="add-warehouse__form">
                     <h2 className="add-warehouse__form--title">Warehouse Details</h2>
                         <div className="add-warehouse__line">                   
                         <label className="add-warehouse__form--name-label"> Warehouse Name</label>
@@ -45,8 +65,8 @@ class warehouse extends react.Component {
                         <input className="add-warehouse__form--email-input" name="email" type="text" placeholder="Email"></input>
                         </div>
                         <div>
-                            <button className="add-warehouse__sumbit-button" type="submit">Add Warehouse</button>
                             <button className="add-warehouse__cancel-button" type="reset">Cancel</button> 
+                            <button className="add-warehouse__sumbit-button" type="submit">Add Warehouse</button>
                         </div>
                 </form>
             </div>
