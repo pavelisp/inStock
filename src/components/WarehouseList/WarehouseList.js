@@ -8,7 +8,7 @@ class WarehouseList extends Component {
       <div className="WarehouseList">
         <header className="WarehouseList__header">
           <h1 className="WarehouseList__title">Warehouses</h1>
-          <input type="search" />
+          <input  className="WarehouseList__search"type="search" placeholder="Search"/>
           <button className="WarehouseList__button">+ Add New Warehouse</button>
         </header>
         <section className="WarehouseList__list-section">
