@@ -13,9 +13,13 @@ label{
     &__container{
         margin: 0 16px;
         box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+        background-color: $color-white;
 
         @include tablet{
             margin: 0 32px;
+        }
+        @include desktop{
+            margin: 0 130px;
         }
     }
 
@@ -32,6 +36,9 @@ label{
         @include tablet{
             padding: 32px 32px 23px 32px;
         }
+        @include desktop{
+            padding: 32px 40px 23px 40px;
+        }
         
     }
     &__backArrow{
@@ -40,7 +47,16 @@ label{
         margin-right: 12px;
     }
     &__editButton-icon {
-        fill:white
+        @include tablet{
+            position: relative;
+            right: 7px;
+            top: 5px;
+        }
+        @include desktop{
+            position: relative;
+            right: 7px;
+            top: 5px;
+        }
     }
     &__editButton-mobile{
         width: 36px;
@@ -54,6 +70,9 @@ label{
         background-position: center;
         margin-left: auto;
         @include tablet {
+            display: none;
+        }
+        @include desktop{
             display: none;
         }
         
@@ -72,6 +91,17 @@ label{
             line-height: 38px;
             
         }
+        @include desktop {
+            display: block;
+            margin-left: auto;
+            width: 80px;
+            height: 38px;
+            border-radius: 20px;
+            border: none;
+            color: $color-white;
+            background-color: $color-indigo;
+            line-height: 38px;
+        }
     }
 }
 
@@ -83,6 +113,10 @@ label{
         @include tablet{
             flex-direction: row;
             padding: 32px 32px 24px 32px;
+        }
+        @include desktop{
+            flex-direction: row;
+            padding: 32px 40px 24px 40px;
         }
     }
 
@@ -99,10 +133,15 @@ label{
             @include tablet{
                 margin-top: 0;
             }
+            @include desktop{
+                margin-top: 0;
+                margin-bottom: 32px;
+            }
 
             &-right{
                 width: 50%;
             }
+
         }
 
         &-description{
@@ -134,11 +173,31 @@ label{
         border-left: 1px solid $color-cloud;
         padding-left: 32px;
     }
+    @include desktop {
+        width: 50%;
+        border-left: 1px solid $color-cloud;
+        padding-left: 32px;
+    }
 }
 
 .left {
     @include tablet {
         width: 50%;
         margin-right: 16px;
+    }
+    @include desktop{
+        width: 50%;
+        margin-right: 16px;
+    }
+}
+
+.bigger__wrapper{
+    background: linear-gradient(to bottom,$color-graphite 19%, $color-Lgrey 19%);
+
+    @include tablet{
+        background: linear-gradient(to bottom,$color-graphite 29.5%, $color-Lgrey 29.5%);
+    }
+    @include desktop{
+        background: linear-gradient(to bottom,$color-graphite 32%, $color-Lgrey 32%);
     }
 }

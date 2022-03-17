@@ -27,6 +27,7 @@
     &__container{
         margin: 0 16px;
         box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+        background-color: $color-white;
 
         @include tablet{
             margin: 0 32px;
@@ -193,4 +194,15 @@
         color: $color-black;
     }
 
+}
+
+.bigger__wrapper{
+    background: linear-gradient(to bottom,$color-graphite 10%, $color-Lgrey 10%);
+
+    @include tablet{
+        background: linear-gradient(to bottom,$color-graphite 16.6%, $color-Lgrey 16.6%);
+    }
+    @include desktop{
+        background: linear-gradient(to bottom,$color-graphite 15.6%, $color-Lgrey 15.6%);
+    }
 }
