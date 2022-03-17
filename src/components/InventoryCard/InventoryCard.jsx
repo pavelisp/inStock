@@ -44,14 +44,6 @@ export default function InventoryCard({ itemName, category, status, quantity, wa
             </li>
 
             <li className='inventoryCardtableandDesktop__container'>
-                {/* <div className='inventoryCardtableandDesktop__Header'>
-                   <h4 className='inventoryCardtableandDesktop__title'>INVENTORY ITEM<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>CATEGORY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>STATUS<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>QTY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>WAREHOUSE<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>ACTIONS</h4>
-                </div> */}
                 <div className='inventoryCardtableandDesktop__list'>
                    <h3 className='inventoryCardtableandDesktop__item'>{itemName}<img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'></img></h3>
                    <h3 className='inventoryCardtableandDesktop__category'>{category}</h3> 
