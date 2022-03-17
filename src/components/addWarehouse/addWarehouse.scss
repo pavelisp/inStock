@@ -1,4 +1,13 @@
+@import "../../style/global";
+
 .add-warehouse{
+    &__wrapper{
+        margin: 1rem;
+       // background: linear-gradient(to bottom, $color-graphite 15%, $color-Lgrey 10%);
+         //   @include tablet{
+          //      margin:2rem;
+          //  }
+    }
     &__form input{
         width:100%;
         height: 2.5rem;
@@ -14,7 +23,7 @@
         display: flex;
         flex-direction: column; 
     }
-    &__error input{
+    &__error{
         border: red 1px solid
 
     }

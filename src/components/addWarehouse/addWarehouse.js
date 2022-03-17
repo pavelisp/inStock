@@ -5,11 +5,23 @@ import axios from "axios"
 
 class warehouse extends react.Component {
 
-    
+    state = {
+        nameValid: true,
+        phoneNumberValid: true,
+    }
 
     render(){
         const axiosURL = ""
         const handleSubmit = (e) => {
+            let phoneNumberValid = true;
+            if (e.target.phone.value.length < 10){
+                phoneNumberValid = false;
+            }
+            
+            this.setState({
+                phoneNumberValid
+            })
+
             e.preventDefault(e);
             axios.post(`${axiosURL}/warehouses`,{
                 name: e.target.name.value,
@@ -27,6 +39,7 @@ class warehouse extends react.Component {
 
     return(
         <main className="add-warehouse">
+            <div className="add-warehouse__wrapper">
             <h1 className="add-warehouse__header">Add New Warehouse</h1>
             <div className="add-warehouse__container">
                 <form onSubmit={handleSubmit} className="add-warehouse__form">
@@ -58,18 +71,19 @@ class warehouse extends react.Component {
                         </div>
                         <div className="add-warehouse__line">
                         <label className="add-warehouse__form--phone-label"> Phone Number</label>
-                        <input className="add-warehouse__form--phone-input" name="phone" type="text" placeholder="Phone Number"></input>
+                        <input className={`add-warehouse__form--phone-input ${this.state.phoneNumberValid ? "" : "add-warehouse__error"}`} name="phone" type="text" placeholder="Phone Number"></input>
                         </div>
                         <div className="add-warehouse__line">
                         <label className="add-warehouse__form--email-label"> Email</label>
                         <input className="add-warehouse__form--email-input" name="email" type="text" placeholder="Email"></input>
                         </div>
                         <div>
-                            <button className="add-warehouse__cancel-button" type="reset">Cancel</button> 
-                            <button className="add-warehouse__sumbit-button" type="submit">Add Warehouse</button>
+                            <button className="add-warehouse__button--cancel" type="reset">Cancel</button> 
+                            <button className="add-warehouse__button--submit" type="submit">Add Warehouse</button>
                         </div>
                 </form>
             </div>
+        </div>
         </main>
     )
     }

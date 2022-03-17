@@ -1,10 +1,7 @@
 import Header from './components/Header/Header';
-<<<<<<< HEAD
 import InventoryList from './components/InventoryList/InventoryList';
 import WareHouseDetails from "./components/WareHouseDetails/WareHouseDetails";
 import AddWarehouse from "./components/addWarehouse/addWarehouse"
-=======
->>>>>>> c2dd525a50035b2206c6951f983ae2e1ca72165d
 import "./App.scss";
 import { Component } from "react";
 import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";

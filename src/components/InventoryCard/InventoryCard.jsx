@@ -1,8 +1,8 @@
 import './InventoryCard.scss';
-import GreaterImg from '../../assets/icons/arrow_drop_down-24px.svg';
-import DeleteIcon from '../../assets/icons/delete_outline-24px.svg';
-import EditIcon from '../../assets/icons/edit-24px.svg';
-import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
+import GreaterImg from '../../assets/Icons/arrow_drop_down-24px.svg';
+import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
+import EditIcon from '../../assets/Icons/edit-24px.svg';
+import ChevronRight from '../../assets/Icons/chevron_right-24px.svg';
 
 export default function InventoryCard({ itemName, category, status, quantity, warehouseName}) {
 
