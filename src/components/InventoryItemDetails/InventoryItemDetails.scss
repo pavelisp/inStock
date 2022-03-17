@@ -1,0 +1,100 @@
+@use "../../style/partial/color-var" as *;
+@use "../../style/partial/mixin" as *;
+
+label{
+    font-size: 0.688rem;
+  line-height: 1rem;
+  font-family: "titillium-regular";
+  font-weight: 400;
+
+}
+
+.itemDetails {
+    &__container{
+        margin: 0 16px;
+    }
+
+
+}
+
+.header {
+    &__wrapper{
+        display: flex;
+        padding: 32px 24px 22px 24px;
+        border-bottom: 1px solid black;
+        border-radius: 4px;
+        align-items: center;
+        
+    }
+    &__backArrow{
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+    }
+    &__editButton-icon {
+        fill:white
+    }
+    &__editButton-mobile{
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        border-radius: 50%;
+        border: none;
+        background-color: $color-indigo;
+        background-image: url("../../assets/icons/edit-24px.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-left: auto;
+        @include tablet {
+            display: none;
+        }
+        
+    }
+    &__editButton-tablet{
+        display: none;
+    }
+}
+
+.info {
+    &__container{
+        padding: 8px 24px 0 24px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card{
+
+        &-container{
+            display: flex;
+            width: 100%;
+        }
+
+        &-wrapper{
+            margin-top: 16px;
+
+            &-right{
+                width: 50%;
+            }
+        }
+
+        &-description{
+            margin-top: 4px;
+
+            &-instock{
+                color: $color-green;
+                background-color: rgba(51, 170, 51, .07);
+                width: 61px;
+                border-radius: 12px;
+                text-align: center;
+                
+            }
+        }
+
+        
+    }
+}
+
+.right{
+    
+    width: 100%;
+}
