@@ -38,11 +38,19 @@
       flex-direction: row;
       width: 100%;
       justify-content: space-between;
+      @include tablet{
+          display: flex;
+          flex-direction: row;
+      }
 
   }
   &__address{
       display: flex;
       flex-direction: column;
+      @include tablet{
+        border-right: 1px solid $color-cloud ;
+        padding-right: 16.25rem;
+      }
       &-title{
           font-size: 0.6875rem;
           line-height: 1rem;
@@ -62,7 +70,7 @@
       flex-direction: column;
       padding-bottom: 1rem;
       @include tablet{
-          border-left: 1px solid $color-cloud ;
+          
           padding-left: 2.5rem;
       }
       &-title{
@@ -94,6 +102,11 @@
       justify-content: space-between;
       align-items: center;
       width: 70%;
+      flex-direction: column;
+      @include tablet{
+          display: flex;
+          flex-direction: row;
+      }
 
   }
 
