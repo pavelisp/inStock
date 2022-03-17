@@ -11,7 +11,8 @@ import WarehouseDetailsitem from "../WarehouseDetailsItem/WarehouseDetailsItem";
 class WarehouseDetails extends Component  {
 
   render() {
-    console.log(this.props)
+    const { warehouseId } = this.props.rProps.match.params;
+
     return (
       <div className="warehouseDetails">
         <header className="warehouseDetails__header">
@@ -42,8 +43,8 @@ class WarehouseDetails extends Component  {
         </section>
 
         <ul>
-          {this.props.inventory
-          .filter(item => item.warehouseID === this.props.warehouses[0].id)
+          {this.props.inventory &&
+          this.props.inventory.filter(item => item.warehouseID === warehouseId)
           .map(item =>(
             <WarehouseDetailsitem item={item}/> 
 
