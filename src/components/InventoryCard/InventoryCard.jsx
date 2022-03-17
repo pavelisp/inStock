@@ -2,38 +2,37 @@ import './InventoryCard.scss';
 import GreaterImg from '../../assets/icons/arrow_drop_down-24px.svg';
 import DeleteIcon from '../../assets/icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/icons/edit-24px.svg';
-import SortIcon from '../../assets/icons/sort-24px.svg';
 import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
 
-export default function InventoryCard() {
+export default function InventoryCard({ itemName, category, status, quantity, warehouseName}) {
 
     
         return(
             <>
-            <div className='inventoryCard'>
+            <li className='inventoryCard'>
             <div className='inventoryCard__container'>
                     <div className='inventoryCard__left'>    
                         <div className='inventoryCard__left-item'>    
                             <p className='inventoryCard__left-itemTitle'>INVENTORY ITEM</p>
-                            <p className='inventoryCard__left-product'>Television<img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'></img></p>
+                            <p className='inventoryCard__left-product'>{itemName}<img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'></img></p>
                         </div>
                         <div className='inventoryCard__left-category'>
                             <p className='inventoryCard__left-categoryTitle'>CATEGORY</p>
-                            <p className='inventoryCard__left-category'>Electronics</p>
+                            <p className='inventoryCard__left-category'>{category}</p>
                         </div>
                     </div>
                     <div className='inventoryCard__right'>
                         <div className='inventoryCard__right-item'>    
                             <p className='inventoryCard__itemTitle'>STATUS</p>
-                            <p className='inventoryCard__item'>IN STOCK</p>
+                            <p className='inventoryCard__item'>{status}</p>
                         </div>
                         <div className='inventoryCard__left-category'>
                             <p className='inventoryCard__categoryTitle'>QTY</p>
-                            <p className='inventoryCard__category'>500</p>
+                            <p className='inventoryCard__category'>{quantity}</p>
                         </div>
                         <div className='inventoryCard__left-category'>
                             <p className='inventoryCard__categoryTitle'>WAREHOUSE</p>
-                            <p className='inventoryCard__category'>Manhattan</p>
+                            <p className='inventoryCard__category'>{warehouseName}</p>
                         </div>
                     </div>
 
@@ -42,29 +41,21 @@ export default function InventoryCard() {
                     <img className='inventoryCard__left-icon' src={DeleteIcon} alt='delete icon'></img>
                     <img className='inventoryCard__left-icon' src={EditIcon} alt='edit icon'></img>
                 </div>
-            </div>
+            </li>
 
-            <div className='inventoryCardtableandDesktop__container'>
-                <div className='inventoryCardtableandDesktop__Header'>
-                   <h4 className='inventoryCardtableandDesktop__title'>INVENTORY ITEM<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>CATEGORY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>STATUS<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>QTY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>WAREHOUSE<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>ACTIONS</h4>
-                </div>
+            <li className='inventoryCardtableandDesktop__container'>
                 <div className='inventoryCardtableandDesktop__list'>
-                   <h3 className='inventoryCardtableandDesktop__item'>Television<img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'></img></h3>
-                   <h3 className='inventoryCardtableandDesktop__category'>Electronics</h3> 
-                   <h3 className='inventoryCardtableandDesktop__status'>Status</h3> 
-                   <h3 className='inventoryCardtableandDesktop__qty'>500</h3> 
-                   <h3 className='inventoryCardtableandDesktop__warehouse'>Manhattan</h3> 
+                   <h3 className='inventoryCardtableandDesktop__item'>{itemName}<img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'></img></h3>
+                   <h3 className='inventoryCardtableandDesktop__category'>{category}</h3> 
+                   <h3 className='inventoryCardtableandDesktop__status'>{status}</h3> 
+                   <h3 className='inventoryCardtableandDesktop__qty'>{quantity}</h3> 
+                   <h3 className='inventoryCardtableandDesktop__warehouse'>{warehouseName}</h3> 
                    <div className='inventoryCardtableandDesktop__icons'>
                         <img className='inventoryCardtableandDesktop__icon' src={DeleteIcon} alt='delete icon'></img>
                         <img className='inventoryCardtableandDesktop__icon' src={EditIcon} alt='edit icon'></img>
                    </div> 
                 </div>
-            </div>
+            </li>
         
 
             </>
