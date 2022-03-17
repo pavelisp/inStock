@@ -15,11 +15,26 @@ class App extends Component {
   }
 
   componentDidMount() {
+
+    // get all inventory items on load 
+
     axios
       .get('http://localhost:8080/inventory')
       .then(response => {
         this.setState({
           inventory: response.data
+        })
+
+      })
+      .catch(err =>console.log(err))
+
+      // get all warehouses on load 
+
+      axios
+      .get('http://localhost:8080/warehouses')
+      .then(response => {
+        this.setState({
+          warehouses: response.data
         })
 
       })
