@@ -1,10 +1,10 @@
 import "./WareHouseDetails.scss";
 import { Component } from "react";
-import ArrowBack from '../../assets/icons/arrow_back-24px.svg';
-import Editbtn from '../../assets/icons/edit-24px.svg';
-import DeleteIcon from '../../assets/icons/delete_outline-24px.svg';
-import EditIcon from '../../assets/icons/edit-24px.svg';
-import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
+import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
+import Editbtn from '../../assets/Icons/edit-24px.svg';
+import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
+import EditIcon from '../../assets/Icons/edit-24px.svg';
+import ChevronRight from '../../assets/Icons/chevron_right-24px.svg';
 
 
 class WarehouseDetails extends Component {

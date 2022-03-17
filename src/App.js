@@ -8,7 +8,7 @@ import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";
 import Warehouses from './pages/Warehouses/Warehouses';
 import Inventory from './pages/Inventory/Inventory';
 import axios from 'axios';
-import WareHouseDetails from './components/WareHouseDetails/WareHouseDetails';
+
 
 
 
