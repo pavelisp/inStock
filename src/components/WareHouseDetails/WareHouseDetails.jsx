@@ -8,6 +8,7 @@ import EditIcon from '../../assets/icons/edit-24px.svg';
 import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
 import WarehouseDetailsitem from "../WarehouseDetailsItem/WarehouseDetailsItem";
 import SortIcon from '../../assets/icons/sort-24px.svg';
+import { Link } from "react-router-dom";
 
 class WarehouseDetails extends Component  {
 
@@ -23,9 +24,10 @@ class WarehouseDetails extends Component  {
     console.log(this.props.warehouses)
     return (
       warehouse &&
+      <div className=' WarehouseDetails__wrapper'>
       <div className="warehouseDetails">
         <header className="warehouseDetails__header">
-          <img className="warehouseDetails__back" src={ArrowBack} alt='arrow back icon'></img>
+         <Link to='/warehouses/'> <img className="warehouseDetails__back" src={ArrowBack} alt='arrow back icon'></img> </Link>
           <h1 className="warehouseDetails__title">{warehouse.name}</h1>
           <img className="warehouseDetails__edit" src={Editbtn} alt='edit icon'></img>
         </header>
@@ -66,6 +68,7 @@ class WarehouseDetails extends Component  {
 
           ))}
         </ul>
+      </div>
       </div>
     );
   }
