@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import WarehouseDetails from "../../components/WareHouseDetails/WareHouseDetails";
 
+
 class Warehouses extends Component{
 
     

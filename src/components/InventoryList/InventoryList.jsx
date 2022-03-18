@@ -1,8 +1,9 @@
 import './InventoryList.scss';
-import SearchImg from '../../assets/Icons/search-24px.svg';
+import '../../components/InventoryCard/InventoryCard.scss';
+import SearchImg from '../../assets/icons/search-24px.svg';
 import React from 'react';
 import InventoryCard from '../InventoryCard/InventoryCard';
-import SortIcon from '../../assets/Icons/sort-24px.svg';
+import SortIcon from '../../assets/icons/sort-24px.svg';
 
 
 export default class InventoryList extends React.Component  {

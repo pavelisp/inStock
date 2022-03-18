@@ -1,7 +1,7 @@
 import react from "react"
-import "./addWarehouse.scss"
+import "./warehouseForm.scss"
 import axios from "axios"
-import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
+import ArrowBack from '../../assets/icons/arrow_back-24px.svg';
 
 class warehouse extends react.Component {
 
@@ -83,7 +83,7 @@ class warehouse extends react.Component {
             <div className="add-warehouse__wrapper">
             <div className="add-warehouse__header"> 
             <img className="add-warehouse__header--back" src={ArrowBack} alt='arrow back icon'></img>   
-            <h1 className="add-warehouse__header--title">Add New Warehouse</h1>
+            <h1 className="add-warehouse__header--title">{this.props.title}</h1>
             </div>  
             <div className="add-warehouse__container">
                 <form onSubmit={handleSubmit} className="add-warehouse__form">
@@ -125,9 +125,9 @@ class warehouse extends react.Component {
                         <input className={`add-warehouse__form--input ${this.state.emailValid ? "" : "add-warehouse__error"}`} name="email" type="text" placeholder="Email"></input>
                         </div>
                         </div>
-                        <div>
+                        <div className="add-warehouse__button">
                             <button className="add-warehouse__button--cancel" type="reset">Cancel</button> 
-                            <button className="add-warehouse__button--submit" type="submit">Add Warehouse</button>
+                            <button className="add-warehouse__button--submit" type="submit">{this.props.btnText}</button>
                         </div>
                 </form>
             </div>

@@ -1,4 +1,4 @@
-@use '../../style/global' as *;
+@use '../../style/partial/global' as *;
 @use '../../style/partial/color-var' as *;
 @use "../../style/partial/font-var" as *;
 @use '../../style/partial/fonts' as *;
@@ -63,6 +63,33 @@
         margin-bottom: .625rem;
         display: flex;
         flex-direction: column; 
+    }
+    &__button{
+        display: flex;
+        padding: 16px 0;
+        margin-top: 16px;
+        background-color: $color-Lgrey;
+        justify-content: center;
+
+        &--cancel{
+            height: 36px;
+            padding: 0 1rem;
+            border-radius: 20px;
+            border: none;
+            width: 30%;
+            background-color: $color-white;
+            border: 1px solid $color-cloud;
+            margin-right: 1rem;
+        }
+        &--submit{
+            height: 36px;
+            padding: 0 16px;
+            border-radius: 20px;
+            border: none;
+            width: 30%;
+            color: $color-white;
+            background-color: $color-indigo;    
+        }
     }
     &__error{
         border: $color-red 1px solid;

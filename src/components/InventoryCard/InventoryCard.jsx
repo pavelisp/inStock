@@ -1,8 +1,9 @@
 import './InventoryCard.scss';
-import GreaterImg from '../../assets/Icons/arrow_drop_down-24px.svg';
-import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
-import EditIcon from '../../assets/Icons/edit-24px.svg';
-import ChevronRight from '../../assets/Icons/chevron_right-24px.svg';
+import GreaterImg from '../../assets/icons/arrow_drop_down-24px.svg';
+import DeleteIcon from '../../assets/icons/delete_outline-24px.svg';
+import EditIcon from '../../assets/icons/edit-24px.svg';
+import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
+import { Link } from 'react-router-dom';
 
 export default function InventoryCard({ itemName, category, status, quantity, warehouseName}) {
 
@@ -14,7 +15,7 @@ export default function InventoryCard({ itemName, category, status, quantity, wa
                     <div className='inventoryCard__left'>    
                         <div className='inventoryCard__left-item'>    
                             <p className='inventoryCard__left-itemTitle'>INVENTORY ITEM</p>
-                            <p className='inventoryCard__left-product'>{itemName}<img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'></img></p>
+                        <Link to='/warehouses/:warehouseId'> <p className='inventoryCard__left-product'>{itemName}<img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'></img></p></Link>
                         </div>
                         <div className='inventoryCard__left-category'>
                             <p className='inventoryCard__left-categoryTitle'>CATEGORY</p>
