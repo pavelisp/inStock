@@ -1,4 +1,6 @@
 import Header from './components/Header/Header';
+import InventoryList from './components/InventoryList/InventoryList';
+import WareHouseDetails from "./components/WareHouseDetails/WareHouseDetails";
 import "./App.scss";
 import { Component } from "react";
 import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";
@@ -50,7 +52,7 @@ class App extends Component {
           <Route path='/warehouses/:warehouseId' exact render={(rProps)=><WarehouseDetails rProps={rProps} inventory={this.state.inventory} warehouses={this.state.warehouses} />} />       
           <Route path="/warehouses" render={(renderProps)=><WarehouseList inventory={this.state.inventory} renderProps={renderProps} warehouses={this.state.warehouses} />} />
           <Route path="/inventory" render={()=> this.state.inventory && <Inventory inventory={this.state.inventory} />} />
-          {/* Routes are flexible right now, add or change as needed */}
+          //* Routes are flexible right now, add or change as needed */
         </Switch>
       </BrowserRouter>
     );
