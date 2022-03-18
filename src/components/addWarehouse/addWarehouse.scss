@@ -21,9 +21,12 @@
         border-radius: 4px;
     }
     &__form{
-
+        & input{
+            border-width: 1px;
+        }
         &:active {
             border-color:$color-indigo;
+            border-width: 1px;
         }
 
         &--title{
@@ -37,11 +40,18 @@
         &--section-2{
             padding:1rem 0;
         }
-        & input{
-        width:100%;
+        &--input{
+        border-color: $color-cloud;
         height: 2.5rem;
         border-radius: 20px;
-        border-color: #bdc5d5;
+        padding: 0 0 0 .625rem;
+
+        }
+        & label{
+            font-size: $m-h3;
+            padding-bottom: 4px;
+            font-family: "titillium-semi-bold";
+            
         }
     }
     &__container{
@@ -55,7 +65,6 @@
         flex-direction: column; 
     }
     &__error{
-        border: $color-red 1px solid
-
+        border: $color-red 1px solid;
     }
 }
