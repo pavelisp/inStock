@@ -1,19 +1,11 @@
 import "./WareHouseDetails.scss";
 import { Component } from "react";
-<<<<<<< HEAD
-import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
-import Editbtn from '../../assets/Icons/edit-24px.svg';
-import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
-import EditIcon from '../../assets/Icons/edit-24px.svg';
-import ChevronRight from '../../assets/Icons/chevron_right-24px.svg';
-=======
 import ArrowBack from '../../assets/icons/arrow_back-24px.svg';
 import Editbtn from '../../assets/icons/edit-24px.svg';
 import DeleteIcon from '../../assets/icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/icons/edit-24px.svg';
 import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
 import WarehouseDetailsitem from "../WarehouseDetailsItem/WarehouseDetailsItem";
->>>>>>> cd919082570d38207747aa8344192b432c4d4a92
 
 
 class WarehouseDetails extends Component  {

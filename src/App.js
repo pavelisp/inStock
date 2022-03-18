@@ -8,12 +8,7 @@ import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";
 import WarehouseList from "./components/WarehouseList/WarehouseList"
 import Inventory from './pages/Inventory/Inventory';
 import axios from 'axios';
-<<<<<<< HEAD
-
-
-=======
 import WarehouseDetails from './components/WareHouseDetails/WareHouseDetails';
->>>>>>> cd919082570d38207747aa8344192b432c4d4a92
 
 
 class App extends Component {

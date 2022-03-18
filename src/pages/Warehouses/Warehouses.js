@@ -1,16 +1,4 @@
 import { Component } from "react";
-<<<<<<< HEAD
-import AddWarehouse from "../../components/addWarehouse/addWarehouse"
-class Warehouses extends Component{
-    
-render(){
-    return(
-    <main>
-        <AddWarehouse/>
-    </main>
-)}
-    
-=======
 import { Route, Switch } from "react-router-dom";
 import WarehouseDetails from "../../components/WareHouseDetails/WareHouseDetails";
 
@@ -26,10 +14,6 @@ class Warehouses extends Component{
             </Switch>
         )
     }
-
-    
-
->>>>>>> cd919082570d38207747aa8344192b432c4d4a92
 }
 
 export default Warehouses;
