@@ -1,25 +1,60 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header/Header';
+import "./App.scss";
+import { Component } from "react";
+import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";
+import WarehouseList from "./components/WarehouseList/WarehouseList"
+import Inventory from './pages/Inventory/Inventory';
+import axios from 'axios';
+import WarehouseDetails from './components/WareHouseDetails/WareHouseDetails';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    warehouses: null,
+    inventory: null
+  }
+
+  componentDidMount() {
+
+    // get all inventory items on load 
+
+    axios
+      .get('http://localhost:8080/inventory')
+      .then(response => {
+        this.setState({
+          inventory: response.data
+        })
+
+      })
+      .catch(err =>console.log(err))
+
+      // get all warehouses on load 
+
+      axios
+      .get('http://localhost:8080/warehouses')
+      .then(response => {
+        this.setState({
+          warehouses: response.data
+        })
+
+      })
+      .catch(err =>console.log(err))
+  }
+
+  render(){
+    return (
+      <BrowserRouter>
+      <Header/>
+        <Switch>
+          <Route path="/" exact render={(renderProps)=><WarehouseList inventory={this.state.inventory} renderProps={renderProps} warehouses={this.state.warehouses} />} />
+          <Route path='/warehouses/:warehouseId' exact render={(rProps)=><WarehouseDetails rProps={rProps} inventory={this.state.inventory} warehouses={this.state.warehouses} />} />       
+          <Route path="/warehouses" render={(renderProps)=><WarehouseList inventory={this.state.inventory} renderProps={renderProps} warehouses={this.state.warehouses} />} />
+          <Route path="/inventory" render={()=> this.state.inventory && <Inventory inventory={this.state.inventory} />} />
+          {/* Routes are flexible right now, add or change as needed */}
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;

@@ -1,0 +1,208 @@
+@use "../../style/partial/color-var" as *;
+@use "../../style/partial/mixin" as *;
+
+
+.header{
+
+    &__wrapper{
+        display: flex;
+        padding: 32px 24px 22px 24px;
+        border-bottom: 1px solid $color-cloud;
+        align-items: center;
+
+        @include tablet{
+            padding: 32px 32px 23px 32px;
+        }
+    }
+
+    &__backArrow{
+        align-self: flex-start;
+        margin-top: 8px;
+        margin-right: 16px;
+    }
+}
+
+
+.addItem{
+    &__container{
+        margin: 0 16px;
+        box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+        background-color: $color-white;
+
+        @include tablet{
+            margin: 0 32px;
+        }
+        @include desktop {
+            margin: 0 130px;
+        }
+    }
+
+    &__wrapper{
+        padding: 0 24px;
+        @include tablet{
+            display: flex;
+            padding: 0 32px;
+        }
+        @include desktop{
+            display: flex;
+            padding: 0 32px;
+        }
+
+        &-left{
+            @include tablet{
+                width: 50%;
+                padding-right: 32px;
+                margin-top: 32px;
+            }
+            @include desktop{
+                width: 50%;
+                padding-right: 32px;
+                margin-top: 32px;
+            }
+            
+        }
+
+        &-right{
+            @include tablet{
+                padding-left: 32px;
+                width: 50%;
+                border-left: 1px solid $color-cloud;
+                margin-top: 32px;
+            }
+
+            @include desktop{
+                padding-left: 32px;
+                width: 50%;
+                border-left: 1px solid $color-cloud;
+                margin-top: 32px;
+            }
+        }
+        
+
+        &-title {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            @include tablet{
+                margin-top: 0;
+            }
+        }
+
+        &-label {
+            margin-bottom: 4px;
+            margin-top: 16px;
+        }
+    }
+
+    &__buttonWrapper{
+        display: flex;
+        padding: 16px 0;
+        margin-top: 16px;
+        background-color: $color-Lgrey;
+        justify-content: center;
+        @include tablet{
+            justify-content: end;
+            padding-right: 32px;
+        }
+        @include desktop{
+            justify-content: end;
+            padding-right: 32px;
+            margin-top: 32px;
+        }
+        
+    }
+
+    &__cancelButton{
+        height: 36px;
+        padding: 0 16px;
+        border-radius: 20px;
+        border: none;
+        width: 30%;
+        background-color: $color-white;
+        border: 1px solid $color-cloud;
+        margin-right: 16px;
+        @include tablet{
+            height: 38px;
+            width: auto;
+        }
+        @include desktop{
+            height: 38px;
+            width: auto;
+        }
+    }
+
+    &__addButton{
+        height: 36px;
+        padding: 0 16px;
+        border-radius: 20px;
+        border: none;
+        width: 30%;
+        color: $color-white;
+        background-color: $color-indigo;
+        @include tablet{
+            height: 38px;
+            width: auto;
+        }
+        @include desktop{
+            height: 38px;
+            width: auto;
+        }
+    }
+
+}
+
+.menus {
+    height: 36px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 6px 16px;
+    box-sizing: border-box;
+    border-color: $color-cloud;
+    color: $color-slate;
+
+    font-size: 0.813rem;
+    line-height: 1.25rem;
+    font-family: "titillium-semi-bold";
+    font-weight: 600;
+    
+
+    @include tablet{
+        height: 38px;
+    }
+    &-description{
+        height: 120px;
+        @include tablet{
+            height: 120px;
+        }
+    }
+}
+
+.addItem__quantity{
+    @include desktop{
+        width: 122px;
+    }
+}
+
+.button__label {
+    font-size: 0.813rem;
+    line-height: 1.25rem;
+    font-family: "titillium-semi-bold";
+    font-weight: 600;
+    color: $color-slate;
+    margin-right: 32px;
+
+    &::selection{
+        color: $color-black;
+    }
+
+}
+
+.bigger__wrapper{
+    background: linear-gradient(to bottom,$color-graphite 10%, $color-Lgrey 10%);
+
+    @include tablet{
+        background: linear-gradient(to bottom,$color-graphite 16.6%, $color-Lgrey 16.6%);
+    }
+    @include desktop{
+        background: linear-gradient(to bottom,$color-graphite 15.6%, $color-Lgrey 15.6%);
+    }
+}
