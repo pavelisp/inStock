@@ -79,7 +79,7 @@ class warehouse extends react.Component {
         };
 
     return(
-        <main className="add-warehouse">
+        <main>
             <div className="add-warehouse__wrapper">
             <div className="add-warehouse__header"> 
             <img className="add-warehouse__header--back" src={ArrowBack} alt='arrow back icon'></img>   

@@ -4,8 +4,8 @@ import WarehouseForm from '../warehouseForm/warehouseForm'
 
 class addwarehouse extends react.Component {
     
-    var title= "Add New WareHouse";
-    var  btnText = "Add Warehouse";
+     title= "Add New WareHouse";
+     btnText = "Add Warehouse";
     render(){
         const axiosURL = ""
         const handleSubmit = (e) => {

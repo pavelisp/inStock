@@ -1,8 +1,10 @@
-@use '../../style/partial/global' as *;
+@use '../../style/global' as *;
 @use '../../style/partial/color-var' as *;
 @use "../../style/partial/font-var" as *;
 @use '../../style/partial/fonts' as *;
 @use '../../style/partial/mixin' as *;
+
+
 
 .add-warehouse{
     padding: 1rem;
