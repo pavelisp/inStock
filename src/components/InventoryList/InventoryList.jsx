@@ -13,7 +13,7 @@ export default class InventoryList extends React.Component  {
         console.log(this.props.inventory)
         return(
             <>
-            <div className='inventoryList__wrapper'>
+        <div className='inventoryList__wrapper'>
             <div className='inventorylist'>
                 <header className='inventorylist__header'>
                     <h2 className='inventorylist__title'>Inventory</h2>
