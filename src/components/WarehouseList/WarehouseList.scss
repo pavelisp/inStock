@@ -6,15 +6,21 @@
   line-height: 1.25rem;
   font-family: "titillium-regular";
   font-weight: 400;
-  @include tablet {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-  }
 
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
   background-color: $color-white;
   margin-inline: 1rem;
   border-radius: 4px;
+
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    margin-inline: 2rem;
+  }
+  @include desktop {
+    width: 1020px;
+    margin-inline: auto;
+  }
   &__wrapper {
     background: linear-gradient(to bottom, $color-graphite 5%, $color-Lgrey 5%);
     @include tablet {
@@ -101,10 +107,16 @@
     }
   }
   &__button {
+    font-weight: 600;
     background-color: $color-indigo;
     color: $color-white;
     border: none;
     min-height: 2.25rem;
+    cursor: pointer;
+    transition: background-color 0.05s ease-in-out;
+    &:hover {
+      background-color: $color-graphite;
+    }
     @include tablet {
       margin-left: 1rem;
       min-height: 1.25rem;
@@ -145,7 +157,8 @@
     }
     &__list-header-actions {
       width: 10%;
-      text-align: end;
+      display: flex;
+      justify-content: flex-end;
     }
   }
   @include desktop {
@@ -163,7 +176,8 @@
     }
     &__list-header-actions {
       width: 7.5%;
-      text-align: end;
+      display: flex;
+      justify-content: flex-end;
     }
   }
 }

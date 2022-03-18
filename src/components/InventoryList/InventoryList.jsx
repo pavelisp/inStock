@@ -1,4 +1,5 @@
 import './InventoryList.scss';
+import '../../components/InventoryCard/InventoryCard.scss';
 import SearchImg from '../../assets/icons/search-24px.svg';
 import React from 'react';
 import InventoryCard from '../InventoryCard/InventoryCard';

@@ -2,14 +2,34 @@ import "./WarehouseItem.scss";
 import { Link } from "react-router-dom";
 import deleteButton from "../../assets/icons/delete_outline-24px.svg";
 import editButton from "../../assets/icons/edit-24px.svg";
+import chevron from "../../assets/icons/chevron_right-24px.svg";
 
-function WarehuseItem({ warehouse: { id, name, address, city, country, contact: { name: contactName, email, phone } } }) {
+function WarehuseItem({
+  warehouse: {
+    id,
+    name,
+    address,
+    city,
+    country,
+    contact: { name: contactName, email, phone },
+  },
+}) {
   return (
     <li className="WarehouseItem" id={id}>
       <div className="WarehouseItem__info">
         <div className="WarehouseItem__warehouse WarehouseItem__box">
           <h4 className="WarehouseItem__header">Warehouse</h4>
-          <Link className="WarehouseItem__text" to={`/warehouses/${id}`} >{name} > </Link>
+          <Link
+            className="WarehouseItem__text WarehouseItem__link"
+            to={`/warehouses/${id}`}
+          >
+            {name}
+            <img
+              className="WarehouseItem__chevron"
+              src={chevron}
+              alt="chevron icon"
+            />
+          </Link>
         </div>
         <div className="WarehouseItem__address WarehouseItem__box">
           <h4 className="WarehouseItem__header">Address</h4>
@@ -24,9 +44,7 @@ function WarehuseItem({ warehouse: { id, name, address, city, country, contact: 
           <p className="WarehouseItem__text">{contactName}</p>
         </div>
         <div className="WarehouseItem__contact-info WarehouseItem__box">
-          <h4 className="WarehouseItem__header">
-            Contact information
-          </h4>
+          <h4 className="WarehouseItem__header">Contact information</h4>
           <p className="WarehouseItem__text WarehouseItem__contact-info-text">
             <span className="WarehouseItem__multi-line">{phone}</span>
             <span className="WarehouseItem__multi-line">{email}</span>
@@ -34,8 +52,12 @@ function WarehuseItem({ warehouse: { id, name, address, city, country, contact: 
         </div>
       </div>
       <div className="WarehouseItem__actions">
-        <span className="WarehouseItem__delete"><img src={deleteButton} alt="delete button" /></span>
-        <span className="WarehouseItem__edit"><img src={editButton} alt="delete button" /></span>
+        <span className="WarehouseItem__delete">
+          <img src={deleteButton} alt="delete button" />
+        </span>
+        <span className="WarehouseItem__edit">
+          <img src={editButton} alt="delete button" />
+        </span>
       </div>
     </li>
   );

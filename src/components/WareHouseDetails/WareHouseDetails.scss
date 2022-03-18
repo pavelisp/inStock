@@ -101,11 +101,13 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      width: 70%;
+      width: 100%;
       flex-direction: column;
       @include tablet{
           display: flex;
           flex-direction: row;
+          align-items: center;
+          width: 70%;
       }
 
   }
