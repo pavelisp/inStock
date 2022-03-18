@@ -1,7 +1,7 @@
-//import variables
-//import mixins
-//import fonts
-//import reset
+@use '../../style/global' as *;
+@use '../../style/partial/color-var' as *;
+@use '../../style/partial/fonts' as *;
+@use '../../style/partial/mixin' as *;
 
 
 .header__container{
@@ -82,4 +82,9 @@
         }
     }
 
+}
+
+.Nav__btn{
+    text-decoration: none;
+    color: $color-white;
 }
