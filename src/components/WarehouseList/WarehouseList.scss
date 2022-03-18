@@ -1,42 +1,118 @@
 @use "../../style/partial/color-var" as *;
 @use "../../style/partial/mixin" as *;
 
-body {
-  background-color: $color-Lgrey;
-}
-
 .WarehouseList {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-family: "titillium-regular";
+  font-weight: 400;
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+
   box-shadow: 0px 2px 5px 0px rgba(19, 24, 44, 0.1);
   background-color: $color-white;
-  margin: 1rem;
+  margin-inline: 1rem;
   border-radius: 4px;
+  &__wrapper {
+    background: linear-gradient(to bottom, $color-graphite 5%, $color-Lgrey 5%);
+    @include tablet {
+      background: linear-gradient(
+        to bottom,
+        $color-graphite 10.3%,
+        $color-Lgrey 10.3%
+      );
+    }
+    @include desktop {
+      background: linear-gradient(
+        to bottom,
+        $color-graphite 14.2%,
+        $color-Lgrey 14.2%
+      );
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
   &__header {
     display: flex;
     flex-direction: column;
     padding-inline: 1.5rem;
     padding-block: 2rem;
+    line-height: 0.8;
+    border-bottom: 1px solid $color-cloud;
     @include tablet {
       flex-direction: row;
       padding-inline: 2rem;
       padding-block: 2rem 1.5rem;
+      border-bottom: none;
     }
     @include desktop {
       flex-direction: row;
       padding-inline: 2.5rem;
       padding-top: 2rem;
+      border-bottom: none;
     }
   }
+  &__list-header-item {
+    display: flex;
+    align-items: center;
+  }
+  &__list-sort-icon {
+    height: 0.875rem;
+    margin-left: 0.25rem;
+    transform: translateY(1px);
+  }
   &__title {
+    margin-bottom: 1rem;
     @include tablet {
+      margin-bottom: 0;
       margin-right: auto;
     }
     @include desktop {
+      margin-bottom: 0;
       margin-right: auto;
     }
   }
   &__search,
   &__button {
     @include round-element;
+  }
+  &__search {
+    position: relative;
+    border: 1px solid $color-cloud;
+    margin-bottom: 1rem;
+    background: url("../../assets/icons/search-24px.svg") no-repeat scroll 94%
+      50%;
+    padding-left: 30px;
+    min-height: 2.25rem;
+    @include tablet {
+      width: 11.5rem;
+      margin-bottom: 0;
+      min-height: 1.25rem;
+    }
+    @include desktop {
+      margin-bottom: 0;
+      width: 17rem;
+      min-height: 1.25rem;
+    }
+  }
+  &__button {
+    background-color: $color-indigo;
+    color: $color-white;
+    border: none;
+    min-height: 2.25rem;
+    @include tablet {
+      margin-left: 1rem;
+      min-height: 1.25rem;
+    }
+    @include desktop {
+      margin-left: 1rem;
+      min-height: 1.25rem;
+    }
   }
   &__list-header {
     text-transform: uppercase;
@@ -50,63 +126,44 @@ body {
     }
     @include desktop {
       display: flex;
+      padding-block: 0.6875rem;
       padding-inline: 2.5rem;
     }
   }
-  &__list-header-item {
-    flex-grow: 1;
-  }
-  &__list-item {
-    padding-block: 1rem;
-    padding-inline: 1.5rem;
-  }
-  &__list-item-header {
-    color: $color-slate;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-  &__list-item-info {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 12.5rem;
-    @include tablet {
-      flex-direction: row;
+  @include tablet {
+    &__list-header-warehouse {
+      width: 22.5%;
     }
-    @include desktop {
-      flex-direction: row;
+    &__list-header-address {
+      width: 19.5%;
+    }
+    &__list-header-contact {
+      width: 23.5%;
+    }
+    &__list-header-contact-info {
+      width: 24.5%;
+    }
+    &__list-header-actions {
+      width: 10%;
+      text-align: end;
     }
   }
-  &__list-item-box {
-    height: 50%;
-  }
-  &__list-item-address-text {
-    display: flex;
-    flex-direction: column;
-  }
-  &__list-item-contact-info-text {
-    display: flex;
-    flex-direction: column;
-  }
-  &__list-item-actions {
-    display: flex;
-    justify-content: space-between;
-    @include tablet {
-      justify-content: flex-start;
+  @include desktop {
+    &__list-header-warehouse {
+      width: 22.25%;
     }
-  }
-  &__list-item-delete,
-  &__list-item-edit {
-    display: block;
-    background-color: red;
-    width: 10px;
-    height: 10px;
-  }
-  &__list-item-header {
-    display: block;
-    @include tablet {
-      display: none;
+    &__list-header-address {
+      width: 24.75%;
+    }
+    &__list-header-contact {
+      width: 21.5%;
+    }
+    &__list-header-contact-info {
+      width: 24%;
+    }
+    &__list-header-actions {
+      width: 7.5%;
+      text-align: end;
     }
   }
 }
