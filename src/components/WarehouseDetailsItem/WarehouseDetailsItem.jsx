@@ -51,7 +51,7 @@ class WarehouseDetailsitem extends Component {
                    <h3 className='inventoryCardtableandDesktop__qty'>{quantity}</h3>  
                    <div className='inventoryCardtableandDesktop__icons'>
                         <img className='inventoryCardtableandDesktop__icon' src={DeleteIcon} alt='delete icon'></img>
-                        <img className='inventoryCardtableandDesktop__icon' src={EditIcon} alt='edit icon'></img>
+                        <img className='inventoryCardtableandDesktop__icon inventoryCardtableandDesktop__edit' src={EditIcon} alt='edit icon'></img>
                    </div> 
                 </div>
             </li>

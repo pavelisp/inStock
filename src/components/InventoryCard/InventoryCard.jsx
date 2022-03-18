@@ -15,7 +15,11 @@ export default function InventoryCard({ itemName, category, status, quantity, wa
                     <div className='inventoryCard__left'>    
                         <div className='inventoryCard__left-item'>    
                             <p className='inventoryCard__left-itemTitle'>INVENTORY ITEM</p>
-                        <Link to='/warehouses/:warehouseId'> <p className='inventoryCard__left-product'>{itemName}<img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'></img></p></Link>
+                        <Link to='/inventory/inventory'>
+                            <p className='inventoryCard__left-product'>{itemName}
+                                <img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'/>
+                            </p>
+                        </Link>
                         </div>
                         <div className='inventoryCard__left-category'>
                             <p className='inventoryCard__left-categoryTitle'>CATEGORY</p>
@@ -53,7 +57,7 @@ export default function InventoryCard({ itemName, category, status, quantity, wa
                    <h3 className='inventoryCardtableandDesktop__warehouse'>{warehouseName}</h3> 
                    <div className='inventoryCardtableandDesktop__icons'>
                         <img className='inventoryCardtableandDesktop__icon' src={DeleteIcon} alt='delete icon'></img>
-                        <img className='inventoryCardtableandDesktop__icon' src={EditIcon} alt='edit icon'></img>
+                        <img className='inventoryCardtableandDesktop__icon inventoryCardtableandDesktop__edit' src={EditIcon} alt='edit icon'></img>
                    </div> 
                 </div>
             </li>

@@ -2,15 +2,27 @@ import { Component } from "react";
 import "./WarehouseList.scss";
 import WarehouseItem from "../WarehouseItem/WarehouseItem";
 import sortIcon from "../../assets/icons/sort-24px.svg"
+import Modal from "../Modal/Modal"
 
 class WarehouseList extends Component {
   state = {
-    editing: false
+    isModalOpen: true
   };
+
+  handleWarehouseDelete = (id, name) => {
+
+  }
+
   render() {
-    
+      
+  if (this.state.isModalOpen){
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "scroll";
+  }
     return (
-      this.props.warehouses && 
+
+      this.props.warehouses &&
       <div className="WarehouseList__wrapper">
       <div className="WarehouseList">
         <header className="WarehouseList__header">
@@ -28,12 +40,13 @@ class WarehouseList extends Component {
           </header>
           <ul className="WarehouseList__list">
            { this.props.warehouses.map(warehouse => (
-             <WarehouseItem key={warehouse.id}warehouse={warehouse}/>
+             <WarehouseItem key={warehouse.id} warehouse={warehouse}/>
            ))}
 
           </ul>
         </section>
       </div>
+      { this.state.isModalOpen && <Modal isModalOpen={this.state.isModalOpen} type="warehouse"/>}
       </div>
     );
   }
