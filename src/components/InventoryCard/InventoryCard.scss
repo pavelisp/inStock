@@ -11,6 +11,9 @@
     @include tablet{
         display: none;
     }
+    @include desktop{
+        display: none;
+    }
 
     &__icons{
         display: flex;
@@ -112,18 +115,61 @@
         display: flex;
         flex-direction: column;
     }
-}
-.inventoryCardtableandDesktop__Header{
-    display: none;
-    @include tablet{
+    @include desktop{
         display: flex;
-        width: 100%;
-        justify-content: space-around;
-        background-color: $color-Lgrey;
-        align-items: center;
+        flex-direction: column;
 
     }
 }
+.inventoryCardtableandDesktop {
+    &__Header{
+        display: none;
+        @include tablet{
+            display: flex;
+            width: 100%;
+            padding-inline: 2rem;
+            background-color: $color-Lgrey;
+            align-items: center;
+        }
+        @include desktop{
+            display: flex;
+            width: 100%;
+            padding-inline: 2rem;
+            background-color: $color-Lgrey;
+            align-items: center;
+
+        }
+        
+    }
+    &__edit{
+        @include tablet{
+            padding-left: 1.5rem;
+            
+
+        }
+        @include desktop{
+            padding-left: 1.5rem;
+        }
+    }
+    &__icons{
+        display: flex;
+        @include tablet{
+            width: 6%;
+        }
+        @include desktop{
+            width: 5%;
+        }
+    }
+    &__title {
+        @include tablet{
+            width: 23.9%
+        }
+        @include desktop{
+            width: 23.9%
+        }
+    }
+}
+
 .inventoryCardtableandDesktop{
 
 &__list{
@@ -131,10 +177,18 @@
     display: none;
     @include tablet{
         display: flex;
-        justify-content: space-around;
         align-items: center;
         padding-top: 1.125rem;
         padding-bottom: 1.125rem;
+        padding-inline: 2rem;
+        border-bottom: 1px solid $color-cloud;
+    }
+    @include desktop{
+        display: flex;
+        align-items: center;
+        padding-top: 1.125rem;
+        padding-bottom: 1.125rem;
+        padding-inline: 2rem;
         border-bottom: 1px solid $color-cloud;
     }
 }
@@ -145,12 +199,53 @@
     color: $color-slate;
     padding-top: 0.6875rem;
     padding-bottom: 0.6875rem;
+
+    
 }
 &__item{
     color: $color-indigo;
     font-family: 'titillium-semi-bold';
     font-size: 0.875rem;
     line-height: 1.375rem;
+    @include tablet {
+        width: 24.5%;
+    }
+    @include desktop {
+        width: 21%;
+    }
+    
+}
+&__category{
+    @include tablet{
+        width: 20.75%;
+    }
+    @include desktop{
+        width: 21.2%;
+    }
+}
+&__status{
+    @include tablet{
+        width: 22.2%;
+}
+    @include desktop{
+        width: 21%;
+}
+}
+&__qty{
+    @include tablet{
+        width: 18.5%;
+    }
+    @include desktop{
+        width: 20%;
+    }
+}
+&__warehouse{
+    @include tablet{
+       width: 13%;
+    }
+    @include desktop{
+        width: 16%;
+     }
 }
 
 }

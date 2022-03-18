@@ -26,12 +26,12 @@ export default class InventoryList extends React.Component  {
 
             </div>
             <div className='inventoryCardtableandDesktop__Header'>
-                   <h4 className='inventoryCardtableandDesktop__title'>INVENTORY ITEM<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>CATEGORY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>STATUS<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>QTY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>WAREHOUSE<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
-                   <h4 className='inventoryCardtableandDesktop__title'>ACTIONS</h4>
+                   <h4 className='inventoryCardtableandDesktop__hitem'>INVENTORY ITEM<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__hcategory'>CATEGORY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__hstatus'>STATUS<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__hqty'>QTY<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__hwarehouse'>WAREHOUSE<img className='sortingimg' src={SortIcon} alt='sorting icon'></img></h4>
+                   <h4 className='inventoryCardtableandDesktop__haction'>ACTIONS</h4>
                 </div>
             <ul>
                {this.props.inventory.map(inventorycard =>{
