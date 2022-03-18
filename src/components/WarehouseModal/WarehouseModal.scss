@@ -22,6 +22,9 @@
     display: block;
     margin-block: 1.3125rem;
   }
+  &__close-icon {
+    cursor: pointer;
+  }
   &__actions {
     display: flex;
     gap: 1rem;
@@ -29,6 +32,7 @@
   }
   &__cancel,
   &__delete {
+    cursor: pointer;
     flex-grow: 1;
     @include round-element;
     font-weight: 600;
