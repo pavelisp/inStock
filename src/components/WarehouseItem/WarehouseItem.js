@@ -5,6 +5,7 @@ import editButton from "../../assets/icons/edit-24px.svg";
 import chevron from "../../assets/icons/chevron_right-24px.svg";
 
 function WarehuseItem({
+  handleWarehouseModalToggle,
   warehouse: {
     id,
     name,
@@ -52,8 +53,8 @@ function WarehuseItem({
         </div>
       </div>
       <div className="WarehouseItem__actions">
-        <span className="WarehouseItem__delete">
-          <img src={deleteButton} alt="delete button" />
+        <span onClick={(e)=>{handleWarehouseModalToggle(e)}} className="WarehouseItem__delete">
+          <img src={deleteButton}  alt="delete button" />
         </span>
         <span className="WarehouseItem__edit">
           <img src={editButton} alt="delete button" />
