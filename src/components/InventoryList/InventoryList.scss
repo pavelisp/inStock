@@ -27,6 +27,13 @@
             align-items: center;
             justify-content: space-between;
         }
+        @include desktop{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+        }
        
     }
 
@@ -38,9 +45,17 @@
             font-size: 2rem;
             line-height: 2.5rem;
         }
+        @include desktop{
+            font-size: 2rem;
+            line-height: 2.5rem;
+
+        }
     }
 
     &__search{
+        @include desktop{
+            margin-left: 30rem;
+        }
         &-img{
             display: flex;
             position: relative;
@@ -50,6 +65,11 @@
                 position: relative;
                 z-index: 1;
             }
+            @include desktop{
+                position: relative;
+                z-index: 1;
+            }
+
         }
         &-title{
             border-radius: 1.25rem;
@@ -62,6 +82,13 @@
                 position: relative;
                 left: 6.25rem;
             }
+            @include desktop{
+                width: 17.5625rem;
+                height: 2.375rem;
+                position: relative;
+                left: 6.25rem;
+            }
+
         }
         &-add{
             display: flex;
@@ -81,7 +108,52 @@
                 width: 8rem;
                 height: 2.375rem;
             }
+            @include desktop{
+                width: 8rem;
+                height: 2.375rem;
+            }
+
 
         }
     }
+}
+
+.inventoryCardtableandDesktop{
+    @include tablet{
+        &__hitem{
+            width: 21.9%;
+        }
+        &__hcategory{
+            width: 18%;
+        }
+        &__hstatus{
+            width: 17%;
+        }
+        &__hqty{
+            width: 16%;
+        }
+        &__hwarehouse{
+            width: 16%;
+        }
+
+    }
+    @include desktop{
+        &__hitem{
+            width: 21.9%;
+        }
+        &__hcategory{
+            width: 18%;
+        }
+        &__hstatus{
+            width: 17%;
+        }
+        &__hqty{
+            width: 16%;
+        }
+        &__hwarehouse{
+            width: 16%;
+        }
+
+    }
+
 }
