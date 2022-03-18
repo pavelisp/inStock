@@ -1,15 +1,26 @@
 import "./WareHouseDetails.scss";
 import { Component } from "react";
+<<<<<<< HEAD
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import Editbtn from '../../assets/Icons/edit-24px.svg';
 import DeleteIcon from '../../assets/Icons/delete_outline-24px.svg';
 import EditIcon from '../../assets/Icons/edit-24px.svg';
 import ChevronRight from '../../assets/Icons/chevron_right-24px.svg';
+=======
+import ArrowBack from '../../assets/icons/arrow_back-24px.svg';
+import Editbtn from '../../assets/icons/edit-24px.svg';
+import DeleteIcon from '../../assets/icons/delete_outline-24px.svg';
+import EditIcon from '../../assets/icons/edit-24px.svg';
+import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
+import WarehouseDetailsitem from "../WarehouseDetailsItem/WarehouseDetailsItem";
+>>>>>>> cd919082570d38207747aa8344192b432c4d4a92
 
 
-class WarehouseDetails extends Component {
+class WarehouseDetails extends Component  {
 
   render() {
+    const { warehouseId } = this.props.rProps.match.params;
+
     return (
       <div className="warehouseDetails">
         <header className="warehouseDetails__header">
@@ -21,25 +32,38 @@ class WarehouseDetails extends Component {
           <div className="warehouseDetails__left">
           <div className="warehouseDetails__address">
             <h4 className="warehouseDetails__address-title">WAREHOUSE ADDRESS:</h4>
-            <p2 className="warehouseDetails__address-address">469 King Street West,</p2>
-            <p2 className="warehouseDetails__address-address">Toronto, CAN</p2>
+            <p className="warehouseDetails__address-address">469 King Street West,</p>
+            <p className="warehouseDetails__address-address">Toronto, CAN</p>
           </div>
           <div className="warehouseDetails__contact">
             <h4 className="warehouseDetails__contact-title">CONTACT NAME:</h4>
-            <p2 className="warehouseDetails__contact-name">Graeme Lyon</p2>
-            <p2 className="warehouseDetails__contact-position">Warehouse Manager</p2>
+            <p className="warehouseDetails__contact-name">Graeme Lyon</p>
+            <p className="warehouseDetails__contact-position">Warehouse Manager</p>
           </div>
           </div>
           <div className="warehouseDetails__right">
           <div className="warehouseDetails__contact">
             <h4 className="warehouseDetails__contact-title">CONTACT INFORMATION:</h4>
-            <p2 className="warehouseDetails__contact-name">+1 (647) 504-0911</p2>
-            <p2 className="warehouseDetails__contact-position">glyon@instock.com</p2>
+            <p className="warehouseDetails__contact-name">+1 (647) 504-0911</p>
+            <p className="warehouseDetails__contact-position">glyon@instock.com</p>
           </div>
           </div>
         </section>
 
-        <li className='inventoryCard'>
+        <ul>
+          {this.props.inventory &&
+          this.props.inventory.filter(item => item.warehouseID === warehouseId)
+          .map(item =>(
+            <WarehouseDetailsitem item={item}/> 
+
+          ))}
+      
+
+
+
+        </ul>
+
+        {/* <li className='inventoryCard'>
             <div className='inventoryCard__container'>
                     <div className='inventoryCard__left'>    
                         <div className='inventoryCard__left-item'>    
@@ -78,7 +102,7 @@ class WarehouseDetails extends Component {
                         <img className='inventoryCardtableandDesktop__icon' src={EditIcon} alt='edit icon'></img>
                    </div> 
                 </div>
-            </li>
+            </li> */}
       </div>
     );
   }

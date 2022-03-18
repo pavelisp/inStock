@@ -1,0 +1,146 @@
+@use "../../style/partial/color-var" as *;
+@use "../../style/partial/mixin" as *;
+
+.WarehouseItem {
+  padding-block: 1rem;
+  padding-inline: 1.5rem;
+  &__multi-line {
+    display: inline-block;
+  }
+  @include tablet {
+    border-bottom: 1px solid $color-cloud;
+    padding-inline: 2rem;
+    display: flex;
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  @include desktop {
+    border-bottom: 1px solid $color-cloud;
+    padding-inline: 2.5rem;
+    display: flex;
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  &__header {
+    color: $color-slate;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    height: 15rem;
+    @include tablet {
+      height: auto;
+      width: 90%;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    @include desktop {
+      height: auto;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+  }
+  &__warehouse {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  @include tablet {
+    &__warehouse {
+      width: 25%;
+    }
+    &__address {
+      width: 22%;
+    }
+    &__contact {
+      width: 26%;
+    }
+    &__contact-info {
+      width: 27%;
+    }
+    &__actions {
+      width: 10%;
+    }
+  }
+  @include desktop {
+    &__warehouse {
+      width: 26%;
+    }
+    &__address {
+      width: 29%;
+    }
+    &__contact {
+      width: 25%;
+    }
+    &__contact-info {
+      width: 25%;
+    }
+    &__actions {
+      width: 10%;
+    }
+  }
+
+  &__box {
+    height: 50%;
+    @include tablet {
+      height: auto;
+    }
+    @include desktop {
+      height: auto;
+    }
+  }
+
+  &__address-text {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+    }
+  }
+  &__contact-info-text {
+    display: flex;
+    flex-direction: column;
+  }
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      align-items: center;
+      justify-content: flex-end;
+    }
+    @include desktop {
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+  &__delete,
+  &__edit {
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-grow: 0;
+    display: inline-block;
+    @include tablet {
+      margin-left: 1.5rem;
+    }
+    @include desktop {
+      margin-left: 1.5rem;
+    }
+  }
+  &__header {
+    display: block;
+    @include tablet {
+      display: none;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+}

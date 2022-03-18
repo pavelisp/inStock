@@ -5,11 +5,15 @@ import AddWarehouse from "./components/addWarehouse/addWarehouse"
 import "./App.scss";
 import { Component } from "react";
 import { Route,Redirect,Switch,BrowserRouter } from "react-router-dom";
-import Warehouses from './pages/Warehouses/Warehouses';
+import WarehouseList from "./components/WarehouseList/WarehouseList"
 import Inventory from './pages/Inventory/Inventory';
 import axios from 'axios';
+<<<<<<< HEAD
 
 
+=======
+import WarehouseDetails from './components/WareHouseDetails/WareHouseDetails';
+>>>>>>> cd919082570d38207747aa8344192b432c4d4a92
 
 
 class App extends Component {
@@ -19,11 +23,26 @@ class App extends Component {
   }
 
   componentDidMount() {
+
+    // get all inventory items on load 
+
     axios
       .get('http://localhost:8080/inventory')
       .then(response => {
         this.setState({
           inventory: response.data
+        })
+
+      })
+      .catch(err =>console.log(err))
+
+      // get all warehouses on load 
+
+      axios
+      .get('http://localhost:8080/warehouses')
+      .then(response => {
+        this.setState({
+          warehouses: response.data
         })
 
       })
@@ -35,10 +54,10 @@ class App extends Component {
       <BrowserRouter>
       <Header/>
         <Switch>
-          <Route path="/" exact to="" />
-          <Route path="/warehouse" render={()=><Warehouses />} />
+          <Route path="/" exact render={(renderProps)=><WarehouseList inventory={this.state.inventory} renderProps={renderProps} warehouses={this.state.warehouses} />} />
+          <Route path='/warehouses/:warehouseId' exact render={(rProps)=><WarehouseDetails rProps={rProps} inventory={this.state.inventory} warehouses={this.state.warehouses} />} />       
+          <Route path="/warehouses" render={(renderProps)=><WarehouseList inventory={this.state.inventory} renderProps={renderProps} warehouses={this.state.warehouses} />} />
           <Route path="/inventory" render={()=> this.state.inventory && <Inventory inventory={this.state.inventory} />} />
-          <Route path="/warehousedetails" render={()=><WareHouseDetails />} />
           {/* Routes are flexible right now, add or change as needed */}
         </Switch>
       </BrowserRouter>
