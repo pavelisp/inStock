@@ -1,7 +1,7 @@
 import "./WarehouseModal.scss";
 import closeIcon from "../../assets/icons/close-24px.svg"
 
-function Modal({ type, name, handleModalToggle, handleWarehouseDelete}) {
+function WarehouseModal({ type, name, handleModalToggle, handleWarehouseDelete}) {
   return (
     <>
       <div className="Modal">
@@ -24,4 +24,4 @@ function Modal({ type, name, handleModalToggle, handleWarehouseDelete}) {
   );
 }
 
-export default Modal;
+export default WarehouseModal;
