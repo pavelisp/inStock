@@ -18,10 +18,10 @@ class App extends Component {
 
   loadInventory = () => {
     axios
-      .get("http://localhost:8080/warehouses")
+      .get("http://localhost:8080/inventory")
       .then((response) => {
         this.setState({
-          warehouses: response.data,
+          inventory: response.data,
         });
       })
       .catch((err) => console.log(err));
@@ -29,10 +29,10 @@ class App extends Component {
 
   loadWarehouses = () => {
     axios
-      .get("http://localhost:8080/inventory")
+      .get("http://localhost:8080/warehouses")
       .then((response) => {
         this.setState({
-          inventory: response.data,
+          warehouses: response.data,
         });
       })
       .catch((err) => console.log(err));
@@ -60,15 +60,9 @@ class App extends Component {
     axios.delete(`http://localhost:8080/warehouses/deletewarehouse/${this.state.warehouseToDelete}`)
     .then(res=> {
       this.setState({isModalOpen: false})
-      axios
-      .get("http://localhost:8080/warehouses")
-      .then((response) => {
-        this.setState({
-          warehouses: response.data,
-        });
+      this.loadWarehouses();
       })
       .catch((err) => console.log(err));
-    })
   };
 
 
