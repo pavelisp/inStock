@@ -12,12 +12,21 @@ class WarehouseDetails extends Component  {
 
   render() {
     const { warehouseId } = this.props.rProps.match.params;
+    let warehouse = null
+    if (this.props.warehouses) {
 
+      warehouse = this.props.warehouses.filter((wh) =>{
+        return wh.id === warehouseId
+      })[0]
+    }
+    console.log(warehouse)
+    console.log(this.props.warehouses)
     return (
+      warehouse &&
       <div className="warehouseDetails">
         <header className="warehouseDetails__header">
           <img className="warehouseDetails__back" src={ArrowBack} alt='arrow back icon'></img>
-          <h1 className="warehouseDetails__title">King West</h1>
+          <h1 className="warehouseDetails__title">{warehouse.name}</h1>
           <img className="warehouseDetails__edit" src={Editbtn} alt='edit icon'></img>
         </header>
         <section className="warehouseDetails__info">

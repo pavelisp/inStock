@@ -10,7 +10,6 @@ class WarehouseDetailsitem extends Component {
 
     render() {
         const {category, description, id, itemName, quantity, status} = this.props.item
-        console.log(this.props.item)
       return (
 
 
