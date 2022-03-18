@@ -20,8 +20,6 @@ class WarehouseDetails extends Component  {
         return wh.id === warehouseId
       })[0]
     }
-    console.log(warehouse)
-    console.log(this.props.warehouses)
     return (
       warehouse &&
       <div className=' WarehouseDetails__wrapper'>

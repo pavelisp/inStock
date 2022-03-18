@@ -10,7 +10,6 @@ export default class InventoryList extends React.Component  {
 
 
     render() {
-        console.log(this.props.inventory)
         return(
             <>
         <div className='inventoryList__wrapper'>
