@@ -5,15 +5,39 @@ import React from "react";
 import InventoryCard from "../InventoryCard/InventoryCard";
 import SortIcon from "../../assets/icons/sort-24px.svg";
 import InventoryModal from "../InventoryModal/InventoryModal";
+<<<<<<< HEAD
+import { Link } from "react-router-dom";
+=======
 import { Link } from 'react-router-dom';
+>>>>>>> dev
+
 export default class InventoryList extends React.Component {
   state = {
     inventoryName: null,
   };
 
+<<<<<<< HEAD
   inventoryNameForModal = (inventoryName) => {
     this.setState({ inventoryName: inventoryName });
   };
+=======
+    render() {
+        return(
+            <>
+        <div className='inventoryList__wrapper'>
+            <div className='inventorylist'>
+                <header className='inventorylist__header'>
+                    <h2 className='inventorylist__title'>Inventory</h2>
+                    <form className='inventorylist__search'>
+                        <img className='inventorylist__search-img' src={SearchImg} alt='magnifying icon' />
+                        <input className='inventorylist__search-title' type='text' placeholder='Search...'/>                  
+                    </form>
+                    <Link to="/addItem">
+                        <p className='inventorylist__search-add'>+Add New Item</p>
+                    </Link>
+                </header>
+                
+>>>>>>> dev
 
   render() {
     return (
