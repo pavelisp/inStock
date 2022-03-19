@@ -167,7 +167,7 @@ class App extends Component {
             component={EditInventoryItem}
           />
           <Route
-            path="/itemDetails/:ID"
+            path="/itemDetails/:itemId"
             exact
             render={()=>{<InventoryItemDetails InventoryItemDetails={this.state.inventory}/>}}
           />

@@ -2,6 +2,7 @@ import axios from "axios";
 import { Component } from "react";
 import back_arrow from "../../assets/icons/arrow_back-24px.svg"
 import "./AddNewInventoryItem.scss";
+import { Link } from "react-router-dom";
 
 
 class AddNewInventoryItem extends Component{
@@ -60,7 +61,9 @@ class AddNewInventoryItem extends Component{
             <div className="bigger__wrapper">
                 <div className="addItem__container">
                     <div className="header__wrapper">
-                        <img className="header__backArrow" src={back_arrow} alt="Back arrow icon"/>
+                        <Link to="/inventory">
+                            <img className="header__backArrow" src={back_arrow} alt="Back arrow icon"/>
+                        </Link>
                         <h1 className="header__title">Add New Inventory Item</h1>
                     </div>
                     <form id="addItem__form" className="addItem__form" onSubmit={this.handleSubmit}>
@@ -106,7 +109,9 @@ class AddNewInventoryItem extends Component{
                         </div>
                     </form>
                     <div className="addItem__buttonWrapper">
-                        <button className="addItem__cancelButton">Cancel</button>
+                        <Link to="/inventory">
+                            <button className="addItem__cancelButton">Cancel</button>
+                        </Link>
                         <button className="addItem__addButton" 
                                 type="submit"
                                 form="addItem__form">+ Add item</button>
