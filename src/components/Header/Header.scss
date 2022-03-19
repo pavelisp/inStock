@@ -1,90 +1,96 @@
-@use '../../style/global' as *;
-@use '../../style/partial/color-var' as *;
-@use '../../style/partial/fonts' as *;
-@use '../../style/partial/mixin' as *;
+@use "../../style/global" as *;
+@use "../../style/partial/color-var" as *;
+@use "../../style/partial/fonts" as *;
+@use "../../style/partial/mixin" as *;
 
-
-.header__container{
-    display: flex;
-    flex-direction: column;
-    background-color: #232940;
-    @media (min-width: 720px){
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 32px;
-    }
-    @media (min-width: 1280px) {
-        display: flex;
-        padding-left: 130px;
-        padding-right: 130px;
-        padding-top: 32px;
-        padding-bottom: 32px;
-    }
-}
-
-.header__logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 24px;
-    margin-bottom: 24px;
-    @media (min-width: 720px){
-        display: flex;
-    }
-}
-
-.subheader{
+.header__container {
+  display: flex;
+  flex-direction: column;
+  background-color: #232940;
+  @media (min-width: 720px) {
     display: flex;
     flex-direction: row;
-    color: white;
-    font-size: 13px;
-    line-height: 20px;
-    justify-content: space-around;
-    padding-bottom: 24px;
-    text-align: center;
-    justify-items: center;
-    @media (min-width: 720px){
-        font-size: 14px;
-        line-height: 22px;
-        padding-bottom: 0;
-    }
-
-    &__warehouse{
-        background-color: #13182C;
-        border-radius: 20px;
-        width: 164px;
-        height: 36px;
-        text-align: center;
-        justify-content: center;
-        padding: 8px 32px;
-        &-title{
-            text-align: center;
-            position: relative;
-            bottom: 8px;    
-        }
-        
-    }
-
-    &__inventory{
-        background-color: #232940;
-        border-radius: 20px;
-        width: 164px;
-        height: 36px;
-        text-align: center;
-        justify-content: center;
-        padding: 8px 32px;
-        &-title{
-            text-align: center;
-            position: relative;
-            bottom: 8px;
-        }
-    }
-
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+  }
+  @media (min-width: 1280px) {
+    display: flex;
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 }
 
-.Nav__btn{
-    text-decoration: none;
-    color: $color-white;
+.header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 24px;
+  margin-bottom: 24px;
+  @media (min-width: 720px) {
+    display: flex;
+  }
+}
+
+.subheader {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-size: 13px;
+  line-height: 20px;
+  justify-content: space-around;
+  padding-bottom: 24px;
+  text-align: center;
+  justify-items: center;
+  @media (min-width: 720px) {
+    font-size: 14px;
+    line-height: 22px;
+    padding-bottom: 0;
+  }
+
+  &__warehouse {
+    text-align: center;
+    justify-content: center;
+    padding: 8px 32px;
+    width: 164px;
+    height: 36px;
+  }
+
+  &__inventory {
+    background-color: #232940;
+    border-radius: 20px;
+    width: 164px;
+    height: 36px;
+    text-align: center;
+    justify-content: center;
+    padding: 8px 32px;
+  }
+}
+
+.Nav__btn {
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  bottom: 8px;
+  color: $color-white;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+
+  @include tablet {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  @include desktop {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+// #13182c
+.active-link {
+  background-color: #13182c;
+  padding: 0.55rem 2rem;
+  border-radius: 5rem;
 }

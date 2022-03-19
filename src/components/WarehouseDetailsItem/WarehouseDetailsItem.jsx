@@ -9,7 +9,7 @@ import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
 class WarehouseDetailsitem extends Component {
 
     render() {
-        const {category, description, id, itemName, quantity, status} = this.props.item
+        const {category, description, id, itemName, quantity, status} = this.props.item;
       return (
 
 
@@ -50,7 +50,7 @@ class WarehouseDetailsitem extends Component {
                    <h3 className='inventoryCardtableandDesktop__status'>{status}</h3> 
                    <h3 className='inventoryCardtableandDesktop__qty'>{quantity}</h3>  
                    <div className='inventoryCardtableandDesktop__icons'>
-                        <img className='inventoryCardtableandDesktop__icon' src={DeleteIcon} alt='delete icon'></img>
+                        <img className='inventoryCardtableandDesktop__icon' onClick={()=>{this.props.handleInventoryModalToggle(id);this.props.inventoryNameForModal(itemName)}} src={DeleteIcon} alt='delete icon'></img>
                         <img className='inventoryCardtableandDesktop__icon inventoryCardtableandDesktop__edit' src={EditIcon} alt='edit icon'></img>
                    </div> 
                 </div>
