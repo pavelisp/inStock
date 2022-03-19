@@ -9,8 +9,18 @@ import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
 import WarehouseDetailsitem from "../WarehouseDetailsItem/WarehouseDetailsItem";
 import SortIcon from '../../assets/icons/sort-24px.svg';
 import { Link } from "react-router-dom";
+import InventoryModal from "../InventoryModal/InventoryModal";
 
 class WarehouseDetails extends Component  {
+  state = {
+    inventoryName: null
+  }
+  
+  inventoryNameForModal = (inventoryName) => {
+    this.setState({inventoryName: inventoryName})
+  }
+
+
 
   render() {
     const { warehouseId } = this.props.rProps.match.params;
@@ -62,11 +72,15 @@ class WarehouseDetails extends Component  {
           {this.props.inventory &&
           this.props.inventory.filter(item => item.warehouseID === warehouseId)
           .map(item =>(
-            <WarehouseDetailsitem item={item}/> 
-
+            <WarehouseDetailsitem 
+            inventoryNameForModal={this.inventoryNameForModal} 
+            handleInventoryDelete={this.props.handleInventoryDelete} 
+            handleInventoryModalToggle={this.props.handleInventoryModalToggle} 
+            item={item}/> 
           ))}
         </ul>
       </div>
+      { this.props.isModalOpen && <InventoryModal name={this.state.inventoryName} inventoryName={this.state.inventoryName} handleInventoryDelete={this.props.handleInventoryDelete} handleInventoryModalToggle={this.props.handleInventoryModalToggle} />}
       </div>
     );
   }
