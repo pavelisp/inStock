@@ -10,7 +10,7 @@ import AddNewInventoryItem from "./components/AddNewInventoryItem/AddNewInventor
 import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
-
+import Footer from "./components/footer/footer";
 class App extends Component {
   state = {
     warehouses: null,
@@ -161,20 +161,19 @@ class App extends Component {
               )
             }
           />
-
           <Route path="/addItem" exact component={AddNewInventoryItem} />
           <Route path="/editItem" exact component={EditInventoryItem} />
           <Route
             path="/itemDetails/:itemId"
             exact
-            render={(renderProps) => (
+            render={() => {
               <InventoryItemDetails
                 InventoryItemDetails={this.state.inventory}
-                {...renderProps}
-              />
-            )}
+              />;
+            }}
           />
         </Switch>
+        <Footer />
       </BrowserRouter>
     );
   }
