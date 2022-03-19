@@ -3,9 +3,10 @@ import "./App.scss";
 import { Component } from "react";
 import { Route, Redirect, Switch, BrowserRouter } from "react-router-dom";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
-import Inventory from "./pages/Inventory/Inventory";
+import InventoryList from "./components/InventoryList/InventoryList";
 import axios from "axios";
 import WarehouseDetails from "./components/WareHouseDetails/WareHouseDetails";
+import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
 
 class App extends Component {
   state = {
@@ -68,18 +69,14 @@ class App extends Component {
 
 
   handleInventoryDelete = () => {
+    console.log('inventoryDelete')
+    console.log('delete', this.state.inventoryToDelete)
     axios.delete(`http://localhost:8080/warehouses/deleteitem/${this.state.inventoryToDelete}`)
     .then(res=> {
       this.setState({isModalOpen: false})
-      axios
-      .get("http://localhost:8080/inventory")
-      .then((response) => {
-        this.setState({
-          inventory: response.data,
-        });
+      this.loadInventory();
       })
       .catch((err) => console.log(err));
-    })
   };
 
   handleWarehouseModalToggle = (e) => {
@@ -90,12 +87,12 @@ class App extends Component {
 
   };
 
-  handleInventoryModalToggle = (e) => {
+  handleInventoryModalToggle = (id) => {
     this.setState({ isModalOpen: !this.state.isModalOpen });
-    e.target.parentNode.parentNode.parentNode.id.length === 36 ?
-      this.setState({inventoryToDelete: e.target.parentNode.parentNode.parentNode.id}):
+    id.length === 36 ?
+      this.setState({inventoryToDelete: id}):
       this.setState({inventoryToDelete: null});
-      
+      console.log('hi')
 };
 
   render() {
@@ -122,8 +119,10 @@ class App extends Component {
             exact
             render={(rProps) => (
               <WarehouseDetails
+                handleInventoryDelete={this.handleInventoryDelete}
                 handleInventoryModalToggle={this.handleInventoryModalToggle}
                 rProps={rProps}
+                isModalOpen={this.state.isModalOpen}
                 inventory={this.state.inventory}
                 warehouses={this.state.warehouses}
               />
@@ -146,7 +145,11 @@ class App extends Component {
             path="/inventory"
             render={() =>
               this.state.inventory && (
-                <Inventory inventory={this.state.inventory} />
+                <InventoryList 
+                isModalOpen={this.state.isModalOpen}
+                handleInventoryDelete={this.handleInventoryDelete}
+                handleInventoryModalToggle={this.handleInventoryModalToggle}
+                inventory={this.state.inventory} />
               )
             }
           />

@@ -5,9 +5,8 @@ import EditIcon from '../../assets/icons/edit-24px.svg';
 import ChevronRight from '../../assets/icons/chevron_right-24px.svg';
 import { Link } from 'react-router-dom';
 
-export default function InventoryCard({ itemName, category, status, quantity, warehouseName}) {
-
-    
+export default function InventoryCard({ id, itemName, category, status, quantity, warehouseName, handleInventoryModalToggle, inventoryNameForModal}) {
+  
         return(
             <>
             <li className='inventoryCard'>
@@ -56,7 +55,7 @@ export default function InventoryCard({ itemName, category, status, quantity, wa
                    <h3 className='inventoryCardtableandDesktop__qty'>{quantity}</h3> 
                    <h3 className='inventoryCardtableandDesktop__warehouse'>{warehouseName}</h3> 
                    <div className='inventoryCardtableandDesktop__icons'>
-                        <img className='inventoryCardtableandDesktop__icon' src={DeleteIcon} alt='delete icon'></img>
+                        <img className='inventoryCardtableandDesktop__icon' onClick={()=>{handleInventoryModalToggle(id);inventoryNameForModal(itemName)}} src={DeleteIcon} alt='delete icon'></img>
                         <img className='inventoryCardtableandDesktop__icon inventoryCardtableandDesktop__edit' src={EditIcon} alt='edit icon'></img>
                    </div> 
                 </div>

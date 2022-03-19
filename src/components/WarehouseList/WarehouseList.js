@@ -9,7 +9,7 @@ class WarehouseList extends Component {
     warehouseName: null
   }
   
-  deleteWarehouseHandler = (warehouseName) => {
+  warehouseNameForModal = (warehouseName) => {
     this.setState({warehouseName: warehouseName})
   }
 
@@ -34,7 +34,7 @@ class WarehouseList extends Component {
           </header>
           <ul className="WarehouseList__list">
            { this.props.warehouses.map((warehouse) => (
-             <WarehouseItem deleteWarehouseHandler={this.deleteWarehouseHandler} key={warehouse.id} handleWarehouseModalToggle={this.props.handleWarehouseModalToggle} warehouse={warehouse}/>
+             <WarehouseItem warehouseNameForModal={this.warehouseNameForModal} key={warehouse.id} handleWarehouseModalToggle={this.props.handleWarehouseModalToggle} warehouse={warehouse}/>
            ))}
 
           </ul>
