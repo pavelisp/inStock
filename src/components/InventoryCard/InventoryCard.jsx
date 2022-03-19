@@ -43,7 +43,9 @@ export default function InventoryCard({ id, itemName, category, status, quantity
             </div>
                 <div className='inventoryCard__icons'>
                     <img className='inventoryCard__left-icon' src={DeleteIcon} alt='delete icon'></img>
-                    <img className='inventoryCard__left-icon' src={EditIcon} alt='edit icon'></img>
+                    <Link to="/editItem">
+                        <img className='inventoryCard__left-icon' src={EditIcon} alt='edit icon'></img>
+                    </Link>
                 </div>
             </li>
 
@@ -56,7 +58,9 @@ export default function InventoryCard({ id, itemName, category, status, quantity
                    <h3 className='inventoryCardtableandDesktop__warehouse'>{warehouseName}</h3> 
                    <div className='inventoryCardtableandDesktop__icons'>
                         <img className='inventoryCardtableandDesktop__icon' onClick={()=>{handleInventoryModalToggle(id);inventoryNameForModal(itemName)}} src={DeleteIcon} alt='delete icon'></img>
-                        <img className='inventoryCardtableandDesktop__icon inventoryCardtableandDesktop__edit' src={EditIcon} alt='edit icon'></img>
+                        <Link to="/editItem">
+                            <img className='inventoryCardtableandDesktop__icon inventoryCardtableandDesktop__edit' src={EditIcon} alt='edit icon'></img>
+                        </Link>
                    </div> 
                 </div>
             </li>

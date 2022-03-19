@@ -2,6 +2,7 @@ import { Component } from "react";
 import "./EditInventoryItem.scss"
 import back_arrow from "../../assets/icons/arrow_back-24px.svg"
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class EditInventoryItem extends Component{
 
@@ -62,7 +63,9 @@ class EditInventoryItem extends Component{
             <div className="bigger__wrapper">
                 <div className="editItem__container">
                     <div className="header__wrapper">
-                        <img className="header__backArrow" src={back_arrow} alt="Back arrow icon"/>
+                        <Link to="/inventory">
+                            <img className="header__backArrow" src={back_arrow} alt="Back arrow icon"/>
+                        </Link>
                         <h1 className="header__title">Edit Inventory Item</h1>
                     </div>
                         <form id="editItem__form" className="editItem__form" onSubmit={this.handleSubmit}>
@@ -105,7 +108,9 @@ class EditInventoryItem extends Component{
                             </div>
                         </form>
                     <div className="editItem__buttonWrapper">
-                        <button className="editItem__cancelButton">Cancel</button>
+                        <Link to="/inventory">
+                            <button className="editItem__cancelButton">Cancel</button>
+                        </Link>
                         <button className="editItem__addButton"
                                 type="submit"
                                 form="editItem__form"

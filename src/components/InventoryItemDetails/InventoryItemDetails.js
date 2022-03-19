@@ -2,17 +2,25 @@ import { Component } from "react";
 import "./InventoryItemDetails.scss";
 import back_arrow from "../../assets/icons/arrow_back-24px.svg"
 import pencil from "../../assets/icons/edit-24px-white.svg"
+import { Link } from "react-router-dom";
 
 class InventoryItemDetails extends Component{
+    
     render(){
         return(
             <div className="bigger__wrapper">
                 <div className="itemDetails__container">
                     <div className="header__wrapper">
-                        <img className="header__backArrow" src={back_arrow} alt="Back arrow icon"/>
+                        <Link to="/inventory">
+                            <img className="header__backArrow" src={back_arrow} alt="Back arrow icon"/>
+                        </Link>
                         <h1 className="header__title">Television</h1>
-                        <button className="header__editButton-mobile"><img className="header__editButton-icon" src={pencil} /></button>
-                        <button className="header__editButton-tablet"><img className="header__editButton-icon" src={pencil} />Edit</button>
+                        <Link to="/editItem">
+                            <button className="header__editButton-mobile"><img className="header__editButton-icon" src={pencil} /></button>
+                        </Link>
+                        <Link to="/editItem">
+                            <button className="header__editButton-tablet"><img className="header__editButton-icon" src={pencil} />Edit</button>
+                        </Link>
                     </div>
                     <section className="info__container">
                         <div className="info__card left">

@@ -157,19 +157,19 @@ class App extends Component {
             }
           />
           <Route 
-            path="/inventory/addItem"
+            path="/addItem"
             exact
             component={AddNewInventoryItem}
           />
           <Route
-            path="/inventory/editItem"
+            path="/editItem"
             exact
             component={EditInventoryItem}
           />
           <Route
-            path="/inventory/itemDetails"
+            path="/itemDetails/:itemId"
             exact
-            component={InventoryItemDetails}
+            render={()=>{<InventoryItemDetails InventoryItemDetails={this.state.inventory}/>}}
           />
         </Switch>
       </BrowserRouter>
