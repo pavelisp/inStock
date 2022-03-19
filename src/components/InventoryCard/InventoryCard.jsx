@@ -14,7 +14,7 @@ export default function InventoryCard({ id, itemName, category, status, quantity
                     <div className='inventoryCard__left'>    
                         <div className='inventoryCard__left-item'>    
                             <p className='inventoryCard__left-itemTitle'>INVENTORY ITEM</p>
-                        <Link to='/inventory/inventory'>
+                        <Link className='Link__item' to='/inventory/inventory'>
                             <p className='inventoryCard__left-product'>{itemName}
                                 <img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'/>
                             </p>
@@ -51,7 +51,9 @@ export default function InventoryCard({ id, itemName, category, status, quantity
 
             <li className='inventoryCardtableandDesktop__container'>
                 <div className='inventoryCardtableandDesktop__list'>
+                    <Link className='Link__item' to='/inventory/inventory'>
                    <h3 className='inventoryCardtableandDesktop__item'>{itemName}<img className='inventoryCard__left-productimg' src={ChevronRight} alt='drop down icon'></img></h3>
+                   </Link>
                    <h3 className='inventoryCardtableandDesktop__category'>{category}</h3> 
                    <h3 className='inventoryCardtableandDesktop__status'>{status}</h3> 
                    <h3 className='inventoryCardtableandDesktop__qty'>{quantity}</h3> 
