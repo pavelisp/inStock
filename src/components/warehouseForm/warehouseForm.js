@@ -82,8 +82,12 @@ class warehouse extends react.Component {
         <main>
             <div className="add-warehouse__wrapper">
             <div className="add-warehouse__header"> 
-            <img className="add-warehouse__header--back" src={ArrowBack} alt='arrow back icon'></img>   
+            <div className="add-warehouse__header--back">
+            <img  src={ArrowBack} alt='arrow back icon'></img>   
+            </div>
+            <div>
             <h1 className="add-warehouse__header--title">{this.props.title}</h1>
+            </div>
             </div>  
             <div className="add-warehouse__container">
                 <form onSubmit={handleSubmit} className="add-warehouse__form">

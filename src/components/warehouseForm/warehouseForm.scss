@@ -12,8 +12,16 @@
 
     &__header{
         display: flex;
-        padding: 1.5rem 0;
+        padding: 1.5rem;
         border-bottom: 1px solid $color-cloud;
+
+        &--back{
+            display:flex;
+            justify-content: flex-end;
+        }
+        &--title{
+            padding-left:.325rem;
+        }
     }
 
     &__wrapper{
@@ -36,11 +44,11 @@
             font-size: $m-h1;
         }
         &--section-1{
-            padding: 1rem 0;
+            padding: 1rem;
             border-bottom: 1px solid $color-cloud;
         }
         &--section-2{
-            padding:1rem 0;
+            padding:1rem;
         }
         &--input{
         border-color: $color-cloud;
@@ -57,7 +65,6 @@
         }
     }
     &__container{
-        margin: 0 1rem;
         display:flex;
         flex-direction:column;
     }
