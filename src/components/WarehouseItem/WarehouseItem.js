@@ -54,8 +54,14 @@ function WarehuseItem({
         </div>
       </div>
       <div className="WarehouseItem__actions">
-        <span onClick={(e)=>{handleWarehouseModalToggle(e);warehouseNameForModal(name)}} className="WarehouseItem__delete">
-          <img src={deleteButton}  alt="delete button" />
+        <span
+          onClick={(e) => {
+            handleWarehouseModalToggle(e);
+            warehouseNameForModal(name);
+          }}
+          className="WarehouseItem__delete"
+        >
+          <img src={deleteButton} alt="delete button" />
         </span>
         <span className="WarehouseItem__edit">
         <Link to={`/warehouses/${id}/edit`}><img src={editButton} alt="delete button" /></Link>
