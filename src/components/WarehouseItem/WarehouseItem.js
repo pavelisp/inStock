@@ -64,7 +64,7 @@ function WarehuseItem({
           <img src={deleteButton} alt="delete button" />
         </span>
         <span className="WarehouseItem__edit">
-          <img src={editButton} alt="delete button" />
+        <Link to={`/warehouses/${id}/edit`}><img src={editButton} alt="delete button" /></Link>
         </span>
       </div>
     </li>

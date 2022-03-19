@@ -54,14 +54,14 @@
     text-align: center;
     justify-content: center;
     padding: 8px 32px;
-    width: 164px;
+    min-width: 164px;
     height: 36px;
   }
 
   &__inventory {
     background-color: #232940;
     border-radius: 20px;
-    width: 164px;
+    min-width: 164px;
     height: 36px;
     text-align: center;
     justify-content: center;
