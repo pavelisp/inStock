@@ -1,0 +1,12 @@
+@use '../../style/global' as *;
+@use '../../style/partial/color-var' as *;
+@use "../../style/partial/font-var" as *;
+@use '../../style/partial/fonts' as *;
+@use '../../style/partial/mixin' as *;
+
+footer{
+    display: flex;
+    justify-content: center;
+    color: $color-cloud;
+    padding: 1.5rem;
+}

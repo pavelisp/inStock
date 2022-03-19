@@ -10,7 +10,7 @@ import AddNewInventoryItem from "./components/AddNewInventoryItem/AddNewInventor
 import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
 import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
-
+import Footer from "./components/footer/footer"
 class App extends Component {
   state = {
     warehouses: null,
@@ -172,6 +172,7 @@ class App extends Component {
             render={()=>{<InventoryItemDetails InventoryItemDetails={this.state.inventory}/>}}
           />
         </Switch>
+        <Footer />
       </BrowserRouter>
     );
   }
