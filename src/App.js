@@ -7,7 +7,7 @@ import InventoryList from "./components/InventoryList/InventoryList";
 import axios from "axios";
 import WarehouseDetails from "./components/WareHouseDetails/WareHouseDetails";
 import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
-
+import Footer from "./components/footer/footer"
 class App extends Component {
   state = {
     warehouses: null,
@@ -155,6 +155,7 @@ class App extends Component {
           />
           {/* Routes are flexible right now, add or change as needed */}
         </Switch>
+        <Footer />
       </BrowserRouter>
     );
   }
