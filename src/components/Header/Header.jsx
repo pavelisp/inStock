@@ -6,7 +6,9 @@ export default function Header() {
   return (
     <div className="header__container">
       <div className="header__logo">
-        <img className="header__img" src={Logo} alt="Logo" />
+        <Link to="/">
+          <img className="header__img" src={Logo} alt="Logo" />
+        </Link> 
       </div>
       <div className="subheader">
         {/* 
@@ -20,8 +22,7 @@ export default function Header() {
             activeClassName="active-link"
             exact={true}
           >
-            {" "}
-            Warehouse{" "}
+            Warehouse
           </NavLink>
         </div>
         <div className="subheader__inventory">
