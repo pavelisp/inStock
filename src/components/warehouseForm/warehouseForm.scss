@@ -1,17 +1,49 @@
-@use '../../style/partial/global' as *;
+@use '../../style/global' as *;
 @use '../../style/partial/color-var' as *;
 @use "../../style/partial/font-var" as *;
 @use '../../style/partial/fonts' as *;
 @use '../../style/partial/mixin' as *;
 
+
+
 .add-warehouse{
     padding: 1rem;
     background: linear-gradient(to bottom, $color-graphite 15%, $color-Lgrey 10%);
+    
+    @include desktop{
+        background: linear-gradient(to bottom, $color-graphite 20%, $color-Lgrey 10%);
+    }
 
     &__header{
         display: flex;
-        padding: 1.5rem 0;
+        padding: 1.5rem;
         border-bottom: 1px solid $color-cloud;
+
+        @include desktop{
+            padding: 1.75rem;
+        }
+
+        &--back{
+            position: relative;
+            top: 5px;
+            @include tablet{
+                top: 10px;
+            }
+            @include desktop{
+                top: 10px;
+            }
+        }
+        &--title{
+            padding-left:.325rem;
+            font-size: $m-h1;
+
+            @include tablet{
+                font-size: $h1;
+            }
+            @include desktop{
+                font-size: $h1;
+            }
+        }
     }
 
     &__wrapper{
@@ -19,6 +51,12 @@
         background-color: $color-white;
         margin: 1rem;
         border-radius: 4px;
+    
+        @include desktop{
+            width: 1020px;
+            margin: 0 auto;
+        }
+
     }
     &__form{
         & input{
@@ -31,14 +69,57 @@
 
         &--title{
             padding: 0 0 1rem 0;
-            font-size: $m-h1;
+            font-size: $m-h2;
+
+            @include tablet{
+                font-size: $h2;
+            }   
+            @include desktop{
+                font-size: $h2;
+            }
+        }
+        &--container{
+            display: flex;
+            flex-direction: column;
+            @include tablet{
+                flex-direction: row;
+                justify-content: center;
+            }
+            @include desktop{
+                flex-direction: row;
+                justify-content: center;
+            }
         }
         &--section-1{
-            padding: 1rem 0;
+            padding: 1rem;
             border-bottom: 1px solid $color-cloud;
+            
+            @include tablet{
+                border-bottom: none;
+                width: 100%;
+                padding: 1rem 1rem 0 2rem;
+            }
+            @include desktop{
+                border-bottom: none;
+                width: 100%;
+                padding: 1rem 1rem 0 2rem;
+            }
         }
         &--section-2{
-            padding:1rem 0;
+            padding:1rem;
+
+            @include tablet{
+                padding: 0 2rem 0 1rem;
+                margin: 1rem 0;
+                width: 100%;
+                border-left: solid 1px $color-cloud
+            }
+            @include desktop{
+                padding: 0 2rem 0 1rem;
+                margin: 1rem 0;
+                width: 100%;
+                border-left: solid 1px $color-cloud
+            }
         }
         &--input{
         border-color: $color-cloud;
@@ -55,7 +136,6 @@
         }
     }
     &__container{
-        margin: 0 1rem;
         display:flex;
         flex-direction:column;
     }
@@ -66,29 +146,61 @@
     }
     &__button{
         display: flex;
-        padding: 16px 0;
-        margin-top: 16px;
+        padding: 1rem 0;
+        margin-top: 1rem;
         background-color: $color-Lgrey;
         justify-content: center;
 
+        @include tablet{
+            padding: 1rem 2rem;
+            justify-content: flex-end;
+        }
+        @include desktop{
+            padding: 1rem 2rem;
+            justify-content: flex-end;
+        }
+
         &--cancel{
-            height: 36px;
+            height: 2.25rem;
             padding: 0 1rem;
             border-radius: 20px;
             border: none;
-            width: 30%;
+            width: 40%;
             background-color: $color-white;
             border: 1px solid $color-cloud;
             margin-right: 1rem;
+            font-size: .622rem;
+            color: $color-slate;
+
+            @include tablet{
+                width: 7%;
+                font-size: $h3;
+                padding: 0rem;
+            }
+            @include desktop{
+                width: 7%;
+                font-size: $h3;
+                padding: 0rem;
+            }
         }
         &--submit{
-            height: 36px;
-            padding: 0 16px;
+            height: 2.25rem;
+            padding: 0 1rem;
             border-radius: 20px;
             border: none;
-            width: 30%;
+            width: 40%;
             color: $color-white;
-            background-color: $color-indigo;    
+            background-color: $color-indigo; 
+            font-size: $m-h3;  
+            
+            @include tablet{
+                width: 12.5%;
+                font-size: $h3;
+            }
+            @include desktop{
+                width: 12.5%;
+                font-size: $h3; 
+            }
         }
     }
     &__error{

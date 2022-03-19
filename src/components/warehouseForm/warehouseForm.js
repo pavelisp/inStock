@@ -79,14 +79,19 @@ class warehouse extends react.Component {
         };
 
     return(
-        <main className="add-warehouse">
+        <main>
             <div className="add-warehouse__wrapper">
             <div className="add-warehouse__header"> 
-            <img className="add-warehouse__header--back" src={ArrowBack} alt='arrow back icon'></img>   
+            <div className="add-warehouse__header--back">
+            <img  src={ArrowBack} alt='arrow back icon'></img>   
+            </div>
+            <div>
             <h1 className="add-warehouse__header--title">{this.props.title}</h1>
+            </div>
             </div>  
             <div className="add-warehouse__container">
                 <form onSubmit={handleSubmit} className="add-warehouse__form">
+                        <div className="add-warehouse__form--container">
                         <div className="add-warehouse__form--section-1">
                     <h2 className="add-warehouse__form--title">Warehouse Details</h2>
                         <div className="add-warehouse__line">                   
@@ -123,6 +128,7 @@ class warehouse extends react.Component {
                         <div className="add-warehouse__line">
                         <label className="add-warehouse__form--email-label"> Email</label>
                         <input className={`add-warehouse__form--input ${this.state.emailValid ? "" : "add-warehouse__error"}`} name="email" type="text" placeholder="Email"></input>
+                        </div>
                         </div>
                         </div>
                         <div className="add-warehouse__button">
