@@ -5,6 +5,13 @@ import sortIcon from "../../assets/icons/sort-24px.svg"
 import WarehouseModal from "../WarehouseModal/WarehouseModal"
 
 class WarehouseList extends Component {
+  state = {
+    warehouseName: null
+  }
+  
+  deleteWarehouseHandler = (warehouseName) => {
+    this.setState({warehouseName: warehouseName})
+  }
 
   render() {
     return (
@@ -27,13 +34,13 @@ class WarehouseList extends Component {
           </header>
           <ul className="WarehouseList__list">
            { this.props.warehouses.map((warehouse) => (
-             <WarehouseItem key={warehouse.id} handleWarehouseModalToggle={this.props.handleWarehouseModalToggle} warehouse={warehouse}/>
+             <WarehouseItem deleteWarehouseHandler={this.deleteWarehouseHandler} key={warehouse.id} handleWarehouseModalToggle={this.props.handleWarehouseModalToggle} warehouse={warehouse}/>
            ))}
 
           </ul>
         </section>
       </div>     
-      { this.props.isModalOpen && <WarehouseModal handleWarehouseDelete={this.props.handleWarehouseDelete} handleWarehouseModalToggle={this.props.handleWarehouseModalToggle} type="warehouse"/>}
+      { this.props.isModalOpen && <WarehouseModal warehouseName={this.state.warehouseName} handleWarehouseDelete={this.props.handleWarehouseDelete} handleWarehouseModalToggle={this.props.handleWarehouseModalToggle} />}
       </div>
     );
   }
