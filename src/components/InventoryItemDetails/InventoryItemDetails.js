@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 class InventoryItemDetails extends Component{
     
     render(){
-        const {InventoryItemDetails} = this.props 
         return(
             <div className="bigger__wrapper">
                 <div className="itemDetails__container">
