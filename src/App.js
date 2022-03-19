@@ -6,6 +6,9 @@ import WarehouseList from "./components/WarehouseList/WarehouseList";
 import InventoryList from "./components/InventoryList/InventoryList";
 import axios from "axios";
 import WarehouseDetails from "./components/WareHouseDetails/WareHouseDetails";
+import AddNewInventoryItem from "./components/AddNewInventoryItem/AddNewInventoryItem";
+import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
+import InventoryItemDetails from "./components/InventoryItemDetails/InventoryItemDetails";
 import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
 import Footer from "./components/footer/footer"
 class App extends Component {
@@ -30,7 +33,7 @@ class App extends Component {
 
   loadWarehouses = () => {
     axios
-      .get("http://localhost:8080/warehouses")
+      .get("http://localhost:8080/warehouses") 
       .then((response) => {
         this.setState({
           warehouses: response.data,
@@ -153,7 +156,21 @@ class App extends Component {
               )
             }
           />
-          {/* Routes are flexible right now, add or change as needed */}
+          <Route 
+            path="/inventory/addItem"
+            exact
+            component={AddNewInventoryItem}
+          />
+          <Route
+            path="/inventory/editItem"
+            exact
+            component={EditInventoryItem}
+          />
+          <Route
+            path="/inventory/itemDetails"
+            exact
+            component={InventoryItemDetails}
+          />
         </Switch>
         <Footer />
       </BrowserRouter>

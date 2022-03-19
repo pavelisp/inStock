@@ -3,6 +3,7 @@ import "./WarehouseList.scss";
 import WarehouseItem from "../WarehouseItem/WarehouseItem";
 import sortIcon from "../../assets/icons/sort-24px.svg"
 import WarehouseModal from "../WarehouseModal/WarehouseModal"
+import { Link } from "react-router-dom";
 
 class WarehouseList extends Component {
   state = {
@@ -22,7 +23,7 @@ class WarehouseList extends Component {
         <header className="WarehouseList__header">
           <h1 className="WarehouseList__title">Warehouses</h1>
           <input  className="WarehouseList__search"type="search" placeholder="Search..."/>
-          <button className="WarehouseList__button">+ Add New Warehouse</button>
+          <Link to="/warehouses/add-new" className="WarehouseList__button">+ Add New Warehouse</Link>
         </header>
         <section className="WarehouseList__list-section">
           <header className="WarehouseList__list-header">
