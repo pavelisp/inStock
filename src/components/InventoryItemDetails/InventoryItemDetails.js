@@ -4,7 +4,9 @@ import back_arrow from "../../assets/icons/arrow_back-24px.svg"
 import pencil from "../../assets/icons/edit-24px-white.svg"
 
 class InventoryItemDetails extends Component{
+    
     render(){
+        const {InventoryItemDetails} = this.props 
         return(
             <div className="bigger__wrapper">
                 <div className="itemDetails__container">
