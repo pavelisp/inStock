@@ -27,7 +27,7 @@ export default class InventoryList extends React.Component  {
                         <img className='inventorylist__search-img' src={SearchImg} alt='magnifying icon' />
                         <input className='inventorylist__search-title' type='text' placeholder='Search...'/>                  
                     </form>
-                    <Link to="/addItem">
+                    <Link className='Link__item' to="/addItem">
                         <p className='inventorylist__search-add'>+Add New Item</p>
                     </Link>
                 </header>
