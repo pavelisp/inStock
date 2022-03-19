@@ -2,24 +2,18 @@ import { Component } from "react";
 import "./WarehouseList.scss";
 import WarehouseItem from "../WarehouseItem/WarehouseItem";
 import sortIcon from "../../assets/icons/sort-24px.svg"
-import Modal from "../Modal/Modal"
+import WarehouseModal from "../WarehouseModal/WarehouseModal"
 
 class WarehouseList extends Component {
   state = {
-    isModalOpen: true
-  };
-
-  handleWarehouseDelete = (id, name) => {
-
+    warehouseName: null
+  }
+  
+  deleteWarehouseHandler = (warehouseName) => {
+    this.setState({warehouseName: warehouseName})
   }
 
   render() {
-      
-  if (this.state.isModalOpen){
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "scroll";
-  }
     return (
 
       this.props.warehouses &&
@@ -39,14 +33,14 @@ class WarehouseList extends Component {
             <h3 className="WarehouseList__list-header-actions WarehouseList__list-header-item">Actions</h3>
           </header>
           <ul className="WarehouseList__list">
-           { this.props.warehouses.map(warehouse => (
-             <WarehouseItem key={warehouse.id} warehouse={warehouse}/>
+           { this.props.warehouses.map((warehouse) => (
+             <WarehouseItem deleteWarehouseHandler={this.deleteWarehouseHandler} key={warehouse.id} handleWarehouseModalToggle={this.props.handleWarehouseModalToggle} warehouse={warehouse}/>
            ))}
 
           </ul>
         </section>
-      </div>
-      { this.state.isModalOpen && <Modal isModalOpen={this.state.isModalOpen} type="warehouse"/>}
+      </div>     
+      { this.props.isModalOpen && <WarehouseModal warehouseName={this.state.warehouseName} handleWarehouseDelete={this.props.handleWarehouseDelete} handleWarehouseModalToggle={this.props.handleWarehouseModalToggle} />}
       </div>
     );
   }
