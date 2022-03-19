@@ -9,20 +9,38 @@
 .add-warehouse{
     padding: 1rem;
     background: linear-gradient(to bottom, $color-graphite 15%, $color-Lgrey 10%);
+    
+    @include desktop{
+        background: linear-gradient(to bottom, $color-graphite 20%, $color-Lgrey 10%);
+    }
 
     &__header{
         display: flex;
         padding: 1.5rem;
         border-bottom: 1px solid $color-cloud;
 
+        @include desktop{
+            padding: 1.75rem;
+        }
+
         &--back{
             position: relative;
-            top: 10px;
+            top: 5px;
+            @include tablet{
+                top: 10px;
+            }
+            @include desktop{
+                top: 10px;
+            }
         }
         &--title{
             padding-left:.325rem;
+            font-size: $m-h1;
 
             @include tablet{
+                font-size: $h1;
+            }
+            @include desktop{
                 font-size: $h1;
             }
         }
@@ -33,6 +51,12 @@
         background-color: $color-white;
         margin: 1rem;
         border-radius: 4px;
+    
+        @include desktop{
+            width: 1020px;
+            margin: 0 auto;
+        }
+
     }
     &__form{
         & input{
@@ -50,11 +74,18 @@
             @include tablet{
                 font-size: $h2;
             }   
+            @include desktop{
+                font-size: $h2;
+            }
         }
         &--container{
             display: flex;
             flex-direction: column;
             @include tablet{
+                flex-direction: row;
+                justify-content: center;
+            }
+            @include desktop{
                 flex-direction: row;
                 justify-content: center;
             }
@@ -68,11 +99,22 @@
                 width: 100%;
                 padding: 1rem 1rem 0 2rem;
             }
+            @include desktop{
+                border-bottom: none;
+                width: 100%;
+                padding: 1rem 1rem 0 2rem;
+            }
         }
         &--section-2{
             padding:1rem;
 
             @include tablet{
+                padding: 0 2rem 0 1rem;
+                margin: 1rem 0;
+                width: 100%;
+                border-left: solid 1px $color-cloud
+            }
+            @include desktop{
                 padding: 0 2rem 0 1rem;
                 margin: 1rem 0;
                 width: 100%;
@@ -113,6 +155,10 @@
             padding: 1rem 2rem;
             justify-content: flex-end;
         }
+        @include desktop{
+            padding: 1rem 2rem;
+            justify-content: flex-end;
+        }
 
         &--cancel{
             height: 2.25rem;
@@ -127,7 +173,12 @@
             color: $color-slate;
 
             @include tablet{
-                width: 10%;
+                width: 7%;
+                font-size: $h3;
+                padding: 0rem;
+            }
+            @include desktop{
+                width: 7%;
                 font-size: $h3;
                 padding: 0rem;
             }
@@ -143,8 +194,12 @@
             font-size: $m-h3;  
             
             @include tablet{
-                width: 17.5%;
+                width: 12.5%;
                 font-size: $h3;
+            }
+            @include desktop{
+                width: 12.5%;
+                font-size: $h3; 
             }
         }
     }

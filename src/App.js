@@ -29,7 +29,7 @@ class App extends Component {
 
   loadWarehouses = () => {
     axios
-      .get("http://localhost:8080/warehouses")
+      .get("http://localhost:8080/warehouses") 
       .then((response) => {
         this.setState({
           warehouses: response.data,
