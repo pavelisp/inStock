@@ -111,6 +111,7 @@
             @include desktop{
                 width: 8rem;
                 height: 2.375rem;
+                margin-left: 6rem;
             }
 
 
@@ -157,6 +158,10 @@
     }
 
 }
+
+.Link__item{
+    text-decoration: none;
+  }
 
 // .inventoryList__wrapper{
 //     background: linear-gradient(to bottom, $color-graphite 1%, $color-Lgrey 1%);

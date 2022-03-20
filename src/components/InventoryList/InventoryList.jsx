@@ -4,10 +4,17 @@ import SearchImg from '../../assets/icons/search-24px.svg';
 import React from 'react';
 import InventoryCard from '../InventoryCard/InventoryCard';
 import SortIcon from '../../assets/icons/sort-24px.svg';
-
+import InventoryModal from "../InventoryModal/InventoryModal";
+import { Link } from 'react-router-dom';
 
 export default class InventoryList extends React.Component  {
-
+    state = {
+        inventoryName: null
+      }
+      
+      inventoryNameForModal = (inventoryName) => {
+        this.setState({inventoryName: inventoryName})
+      }
 
     render() {
         return(
@@ -20,7 +27,9 @@ export default class InventoryList extends React.Component  {
                         <img className='inventorylist__search-img' src={SearchImg} alt='magnifying icon' />
                         <input className='inventorylist__search-title' type='text' placeholder='Search...'/>                  
                     </form>
-                    <p className='inventorylist__search-add'>+Add New Item</p>
+                    <Link className='Link__item' to="/addItem">
+                        <p className='inventorylist__search-add'>+Add New Item</p>
+                    </Link>
                 </header>
                 
 
@@ -37,19 +46,22 @@ export default class InventoryList extends React.Component  {
                {this.props.inventory.map(inventorycard =>{
                    return(
                     <InventoryCard
+                    inventoryNameForModal={this.inventoryNameForModal} 
+                    handleInventoryDelete={this.props.handleInventoryDelete} 
+                    handleInventoryModalToggle={this.props.handleInventoryModalToggle}
                     itemName={inventorycard.itemName}
+                    id={inventorycard.id}
                     category={inventorycard.category}
                     status={inventorycard.status}
                     quantity={inventorycard.quantity}
                     warehouseName={inventorycard.warehouseName}
-                    
-
                     />
 
 
                    )
                })}
             </ul>
+            { this.props.isModalOpen && <InventoryModal name={this.state.inventoryName} inventoryName={this.state.inventoryName} handleInventoryDelete={this.props.handleInventoryDelete} handleInventoryModalToggle={this.props.handleInventoryModalToggle} />}
             </div>
             </>
         )

@@ -1,0 +1,19 @@
+@use '../../style/global' as *;
+@use '../../style/partial/color-var' as *;
+@use "../../style/partial/font-var" as *;
+@use '../../style/partial/fonts' as *;
+@use '../../style/partial/mixin' as *;
+
+footer{
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    align-content: flex-end;
+    color: $color-slate;
+    padding: 2.5rem;
+    background-color: $color-Lgrey;
+
+    @include desktop{
+        padding:3rem;
+    }
+}
