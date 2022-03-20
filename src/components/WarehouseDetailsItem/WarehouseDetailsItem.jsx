@@ -18,12 +18,14 @@ class WarehouseDetailsitem extends Component {
                   INVENTORY ITEM
                 </h4>
                 <p className="inventoryCard__left-product">
-                  {itemName}
-                  <img
-                    className="inventoryCard__left-productimg"
-                    src={ChevronRight}
-                    alt="drop down icon"
-                  ></img>
+                  <Link to={`/itemDetails/${id}`}>
+                    {itemName}
+                    <img
+                      className="inventoryCard__left-productimg"
+                      src={ChevronRight}
+                      alt="drop down icon"
+                    ></img>
+                  </Link>
                 </p>
               </div>
               <div className="inventoryCard__left-category">
@@ -64,12 +66,14 @@ class WarehouseDetailsitem extends Component {
         <li className="inventoryCardtableandDesktop__container">
           <div className="inventoryCardtableandDesktop__list">
             <h3 className="inventoryCardtableandDesktop__item">
-              {itemName}
-              <img
-                className="inventoryCard__left-productimg"
-                src={ChevronRight}
-                alt="drop down icon"
-              ></img>
+              <Link to={`/itemDetails/${id}`}>
+                {itemName}
+                <img
+                  className="inventoryCard__left-productimg"
+                  src={ChevronRight}
+                  alt="drop down icon"
+                ></img>
+              </Link>
             </h3>
             <h3 className="inventoryCardtableandDesktop__category">
               {category}
