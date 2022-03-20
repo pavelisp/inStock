@@ -16,6 +16,7 @@ class App extends Component {
     warehouses: null,
     inventory: null,
     isModalOpen: false,
+    itemDetail: null,
     warehouseToDelete: null,
     inventoryToDelete: null,
   };
