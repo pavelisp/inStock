@@ -3,7 +3,7 @@ import axios from "axios";
 import WarehouseForm from '../warehouseForm/warehouseForm';
 import Header from '../Header/Header'
 
-axiosURL=""
+const axiosURL="http://localhost:8080/warehouses/:id/edit"
 
 class editWarehouse extends react.Component {
     title = "Edit Warehouse"
@@ -26,6 +26,7 @@ class editWarehouse extends react.Component {
         const warehouseId = 
             this.props.match.params.warehouseId 
         this.currentWarehouseDetails(warehouseId)
+        axios.put(axiosURL)
     }
 
     render(){

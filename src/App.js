@@ -5,6 +5,7 @@ import { Route, Redirect, Switch, BrowserRouter } from "react-router-dom";
 import WarehouseList from "./components/WarehouseList/WarehouseList";
 import InventoryList from "./components/InventoryList/InventoryList";
 import axios from "axios";
+import addWarehouse from "./components/addNewWarehouse/addNewWarehouse"
 import WarehouseDetails from "./components/WareHouseDetails/WareHouseDetails";
 import AddNewInventoryItem from "./components/AddNewInventoryItem/AddNewInventoryItem";
 import EditInventoryItem from "./components/EditInventoryItem/EditInventoryItem";
@@ -125,6 +126,7 @@ class App extends Component {
               />
             )}
           />
+          <Route path="/warehouses/add-new" exact component={addWarehouse} />
           <Route
             path="/warehouses/:warehouseId"
             exact
