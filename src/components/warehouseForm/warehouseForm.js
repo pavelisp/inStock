@@ -17,7 +17,6 @@ class warehouse extends react.Component {
     }
 
     render(){
-        const axiosURL = ""
         const handleSubmit = (e) => {
             let nameValid = true;
             if (e.target.name.value == ""){
@@ -51,8 +50,18 @@ class warehouse extends react.Component {
             if(!e.target.email.value.includes('@')){
                 emailValid= false;
             }
-            
-            this.setState({
+            const validation = [nameValid, addressValid, cityValid, countryValid, 
+                contactValid, positionValid, phoneNumberValid, emailValid ]
+
+            function CheckValidation(validation){
+                return validation === false
+            }
+            if (validation.find(CheckValidation) === undefined){
+                this.props.warehouseReq(e)
+                .catch(err => {alert("Error when processing form."); 
+                console.log(err)});
+            }
+                this.setState({
                 nameValid,
                 addressValid, 
                 cityValid,
@@ -64,18 +73,6 @@ class warehouse extends react.Component {
             })
 
             e.preventDefault(e);
-            axios.post(`${axiosURL}/warehouses`,{
-                name: e.target.name.value,
-                address: e.target.address.value,
-                city: e.target.city.value,
-                country: e.target.country.value,
-                contact: e.target.contact.value,
-                position: e.target.position.value,
-                phone: e.target.phone.value,
-                email: e.target.email.value,
-            })
-            .catch(err => alert("Error when processing form. Please fill all Feilds."))
-
         };
 
     return(
