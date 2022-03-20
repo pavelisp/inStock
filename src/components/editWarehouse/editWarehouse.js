@@ -3,16 +3,18 @@ import axios from "axios";
 import WarehouseForm from '../warehouseForm/warehouseForm';
 import Header from '../Header/Header'
 
-axiosURL=""
+
 
 class editWarehouse extends react.Component {
-    title = "Edit Warehouse"
-    btnText = "Save"
+
+    let axiosURL ="http://localhost:8080/warehouses/:id/edit";
+    let title = "Edit Warehouse"
+    let btnText = "Save"
     state = {
         currentWarehouse: {}
     }
     currentWarehouseDetails = (id) => {
-       axios.get (`${axiousURL}/warehouses/${id}`)
+       axios.get (`${axiosURL}/warehouses/${id}`)
        .then((response) => {
            const warehouseDetails = response.data;
            this.setState({
