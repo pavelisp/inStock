@@ -69,6 +69,7 @@ label{
         background-repeat: no-repeat;
         background-position: center;
         margin-left: auto;
+        
         @include tablet {
             display: none;
         }
@@ -200,4 +201,30 @@ label{
     @include desktop{
         background: linear-gradient(to bottom,$color-graphite 32%, $color-Lgrey 32%);
     }
+}
+
+.link__editButton{
+    &-mobile{
+        margin-left: auto;
+        @include tablet{
+            display: none;
+            
+        }
+        @include desktop{
+            display: none;
+        }
+    }
+
+    &-tablet{
+        display: none;
+        @include tablet{
+            display: block;
+            margin-left: auto;
+        }
+        @include desktop{
+            display: block;
+            margin-left: auto;
+        }
+    }
+
 }
