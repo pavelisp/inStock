@@ -16,7 +16,6 @@ class App extends Component {
     warehouses: null,
     inventory: null,
     isModalOpen: false,
-    itemDetail: null,
     warehouseToDelete: null,
     inventoryToDelete: null,
   };
@@ -30,6 +29,10 @@ class App extends Component {
         });
       })
       .catch((err) => console.log(err));
+  };
+
+  loadSingleWarehouse = () => {
+    axios.get("http://localhost:8080/ware");
   };
 
   loadWarehouses = () => {
