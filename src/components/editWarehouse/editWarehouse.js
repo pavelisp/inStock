@@ -38,7 +38,7 @@ class editWarehouse extends react.Component {
         
         const warehouseId = this.props.rProps.match.params.warehouseId;
         this.currentWarehouseDetails(warehouseId)
-        axios.put(axiosURL)
+        axios.put(`http://localhost:8080/warehouses/${warehouseId}`)
     }
 
     render(){
