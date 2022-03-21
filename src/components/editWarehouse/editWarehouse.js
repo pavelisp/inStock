@@ -15,7 +15,7 @@ class editWarehouse extends react.Component {
     btnText = "Save"
    
     currentWarehouseDetails = (id) => {
-       axios.get (`http://localhost:8080/warehouses/${this.props.id}`)
+       axios.get (`http://localhost:8080/warehouses/${id}`)
        .then((response) => {
            const warehouseDetails = response.data;
            console.log(warehouseDetails)
@@ -38,7 +38,7 @@ class editWarehouse extends react.Component {
         
         const warehouseId = this.props.rProps.match.params.warehouseId;
         this.currentWarehouseDetails(warehouseId)
-        axios.put(`http://localhost:8080/warehouses/${this.props.id}`)
+        axios.put(`http://localhost:8080/warehouses/${warehouseId}`)
     }
 
     render(){
