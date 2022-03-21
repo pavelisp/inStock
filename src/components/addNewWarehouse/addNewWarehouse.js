@@ -7,10 +7,11 @@ class addwarehouse extends react.Component {
     title= "Add New WareHouse";
     btnText = "+ Add Warehouse";
     render(){
-      const  axiosURL = "http://localhost:8080/warehouses/addWarehouse"
-        const postWarehouse = (e) => {
+        
+        const handlePost = e => {
 
-            axios.post(`${axiosURL}`,{
+            console.log(e.target)
+            axios.post(`http://localhost:8080/warehouses/addWarehouse`,{
                 name: e.target.name.value,
                 address: e.target.address.value,
                 city: e.target.city.value,
@@ -28,7 +29,7 @@ class addwarehouse extends react.Component {
 
     return(
         <main className="add-warehouse">
-            <WarehouseForm warehouseReq={postWarehouse} title={this.title} btnText={this.btnText}/>
+            <WarehouseForm handleSubmit={handlePost} title={this.title} btnText={this.btnText}/>
         </main>
     )
     }
