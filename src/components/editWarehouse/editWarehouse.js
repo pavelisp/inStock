@@ -4,7 +4,6 @@ import WarehouseForm from '../warehouseForm/warehouseForm';
 import Header from '../Header/Header'
 
 
-
 class editWarehouse extends react.Component {
 
     state = {
@@ -39,6 +38,7 @@ class editWarehouse extends react.Component {
         
         const warehouseId = this.props.rProps.match.params.warehouseId;
         this.currentWarehouseDetails(warehouseId)
+        axios.put(axiosURL)
     }
 
     render(){

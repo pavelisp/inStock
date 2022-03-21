@@ -53,8 +53,18 @@ class warehouse extends react.Component {
             if(!e.target.email.value.includes('@')){
                 emailValid= false;
             }
-            
-            this.setState({
+            const validation = [nameValid, addressValid, cityValid, countryValid, 
+                contactValid, positionValid, phoneNumberValid, emailValid ]
+
+            function CheckValidation(validation){
+                return validation === false
+            }
+            if (validation.find(CheckValidation) === undefined){
+                this.props.warehouseReq(e)
+                .catch(err => {alert("Error when processing form."); 
+                console.log(err)});
+            }
+                this.setState({
                 nameValid,
                 addressValid, 
                 cityValid,

@@ -36,12 +36,12 @@ class InventoryItemDetails extends Component {
               <h1 className="header__title">
                 {this.state.itemDetail.itemName}
               </h1>
-              <Link to="/editItem">
+              <Link className="link__editButton-mobile" to="/editItem">
                 <button className="header__editButton-mobile">
                   <img className="header__editButton-icon" src={pencil} />
                 </button>
               </Link>
-              <Link to="/editItem">
+              <Link className="link__editButton-tablet" to="/editItem">
                 <button className="header__editButton-tablet">
                   <img className="header__editButton-icon" src={pencil} />
                   Edit

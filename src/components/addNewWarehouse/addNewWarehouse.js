@@ -4,8 +4,8 @@ import WarehouseForm from '../warehouseForm/warehouseForm'
 
 class addwarehouse extends react.Component {
     
-     title= "Add New WareHouse";
-     btnText = "+ Add Warehouse";
+    title= "Add New WareHouse";
+    btnText = "+ Add Warehouse";
     render(){
         
         const handlePost = e => {
@@ -21,7 +21,9 @@ class addwarehouse extends react.Component {
                 phone: e.target.phone.value,
                 email: e.target.email.value,
             })
-            .catch(err => alert("Error when processing form. Please fill all Feilds."))
+            .then((response) => {console.log(response) })
+            .catch(err => {alert("Error when processing form.");
+             console.log(err)})
 
         };
 

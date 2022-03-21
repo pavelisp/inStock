@@ -127,7 +127,8 @@ class App extends Component {
               />
             )}
           />
-           <Route path="/warehouses/add-new" component={AddNewWarehouse} />
+          <Route path="/warehouses/add-new" exact component={addWarehouse} />
+          <Route path="/warehouses/add-new" component={AddNewWarehouse} />
           <Route path='/warehouses/:warehouseId/edit' 
           render={(rProps) => (
             <EditWarehouse 
